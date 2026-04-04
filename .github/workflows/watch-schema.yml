@@ -1,15 +1,12 @@
-name: 🔍 Watcher Schema NF-e
+name: Watcher Schema NF-e
 
 on:
-  # Roda todo dia às 07:00 BRT (10:00 UTC)
   schedule:
     - cron: '0 10 * * *'
-
-  # Permite rodar manualmente pela interface do GitHub
   workflow_dispatch:
     inputs:
       force_report:
-        description: 'Forçar envio de relatório mesmo sem mudanças'
+        description: 'Forcar envio mesmo sem mudancas'
         required: false
         default: 'false'
 
@@ -18,35 +15,32 @@ jobs:
     name: Verificar schema NF-e
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
     steps:
-      - name: Checkout repositório
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - name: Instalar dependências
-        run: run: npm ci
+      - name: Instalar
+        run: npm install
 
-      - name: Executar watcher
+      - name: Executar
         id: watch
         env:
-          # Configurar em Settings → Secrets → Actions
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
           FORCE_REPORT: ${{ github.event.inputs.force_report || 'false' }}
         run: npx tsx scripts/watch-schema.ts
 
-      - name: Commit snapshot atualizado (se houve mudança)
+      - name: Commit snapshot
         if: steps.watch.outputs.schema_changed == 'true'
         run: |
-          git config user.name  "schema-watcher[bot]"
-          git config user.email "schema-watcher@noreply.github.com"
+          git config user.name "schema-watcher-bot"
+          git config user.email "bot@noreply.github.com"
           git add data/
-          git commit -m "chore: snapshot NT ${{ steps.watch.outputs.nt_version }}"
+          git commit -m "chore: snapshot atualizado"
           git push
