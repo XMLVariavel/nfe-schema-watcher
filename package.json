@@ -1,0 +1,17 @@
+{
+  "name": "nfe-schema-watcher",
+  "version": "1.0.0",
+  "description": "Watcher automático do schema NF-e — detecta mudanças de NT e envia e-mail",
+  "type": "module",
+  "scripts": {
+    "watch": "tsx scripts/watch-schema.ts",
+    "watch:force": "FORCE_REPORT=true tsx scripts/watch-schema.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

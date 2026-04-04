@@ -1,0 +1,4847 @@
+{
+  "version": "NT 2022.002 v.1.30 publicada em 02/03/2026",
+  "capturedAt": "2026-03-22T20:04:33.360Z",
+  "fieldCount": 484,
+  "fields": {
+    "versao": {
+      "tag": "versao",
+      "id": "A02",
+      "description": "Versão do leiaute",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "Id": {
+      "tag": "Id",
+      "id": "A03",
+      "description": "Identificador da TAG a ser assinada",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 47,
+      "type": "C"
+    },
+    "pk_nItem": {
+      "tag": "pk_nItem",
+      "id": "A04",
+      "description": "Regra para que a numeração do item de detalhe da NF-e seja única.",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "-"
+    },
+    "cUF": {
+      "tag": "cUF",
+      "id": "BA11",
+      "description": "Código da UF do emitente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "cNF": {
+      "tag": "cNF",
+      "id": "B03",
+      "description": "Código Numérico que compõe a Chave de Acesso",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 8,
+      "type": "N"
+    },
+    "natOp": {
+      "tag": "natOp",
+      "id": "B04",
+      "description": "Descrição da Natureza da Operação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "indPag": {
+      "tag": "indPag",
+      "id": "YA01b",
+      "description": "Indicador da Forma de Pagamento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "mod": {
+      "tag": "mod",
+      "id": "BA21",
+      "description": "Modelo do Documento Fiscal",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "C"
+    },
+    "serie": {
+      "tag": "serie",
+      "id": "BA17",
+      "description": "Série do Documento Fiscal",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "nNF": {
+      "tag": "nNF",
+      "id": "BA18",
+      "description": "Número do Documento Fiscal",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "dhEmi": {
+      "tag": "dhEmi",
+      "id": "B09",
+      "description": "Data e hora de emissão do Documento Fiscal",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "dhSaiEnt": {
+      "tag": "dhSaiEnt",
+      "id": "B10",
+      "description": "Data e hora de Saída ou da Entrada da Mercadoria/Produto",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "dPrevEntrega": {
+      "tag": "dPrevEntrega",
+      "id": "B10a",
+      "description": "Data da previsão de entrega ou disponibilização do bem.",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 10,
+      "type": "D"
+    },
+    "tpNF": {
+      "tag": "tpNF",
+      "id": "B11",
+      "description": "Tipo de Operação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "idDest": {
+      "tag": "idDest",
+      "id": "B11a",
+      "description": "Identificador de local de destino da operação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "cMunFG": {
+      "tag": "cMunFG",
+      "id": "X17",
+      "description": "Código do município de ocorrência do fato gerador do ICMS do transporte",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 7,
+      "type": "N"
+    },
+    "cMunFGIBS": {
+      "tag": "cMunFGIBS",
+      "id": "B12a",
+      "description": "Código do Município de consumo, fato gerador do IBS / CBS",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 7,
+      "type": "N"
+    },
+    "tpImp": {
+      "tag": "tpImp",
+      "id": "B21",
+      "description": "Formato de Impressão do DANFE",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "tpEmis": {
+      "tag": "tpEmis",
+      "id": "B22",
+      "description": "Tipo de Emissão da NF-e",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "cDV": {
+      "tag": "cDV",
+      "id": "B23",
+      "description": "Dígito Verificador da Chave de Acesso da NF-e",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "tpAmb": {
+      "tag": "tpAmb",
+      "id": "B24",
+      "description": "Identificação do Ambiente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "finNFe": {
+      "tag": "finNFe",
+      "id": "B25",
+      "description": "Finalidade de emissão da NF-e",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "tpNFDebito": {
+      "tag": "tpNFDebito",
+      "id": "B25.1",
+      "description": "Tipo de Nota de Débito",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "tpNFCredito": {
+      "tag": "tpNFCredito",
+      "id": "B25.2",
+      "description": "Tipo de Nota de Crédito",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "indFinal": {
+      "tag": "indFinal",
+      "id": "B25a",
+      "description": "Indica operação com Consumidor final",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "indPres": {
+      "tag": "indPres",
+      "id": "B25b",
+      "description": "Indicador de presença do comprador no estabelecimento comercial no momento da operação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "indIntermed": {
+      "tag": "indIntermed",
+      "id": "B25c",
+      "description": "Indicador de intermediador/marketplace",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "procEmi": {
+      "tag": "procEmi",
+      "id": "B26",
+      "description": "Processo de emissão da NF-e",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "verProc": {
+      "tag": "verProc",
+      "id": "B27",
+      "description": "Versão do Processo de emissão da NF-e",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "dhCont": {
+      "tag": "dhCont",
+      "id": "B28",
+      "description": "Data e Hora da entrada em contingência",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "xJust": {
+      "tag": "xJust",
+      "id": "B29",
+      "description": "Justificativa da entrada em contingência",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "tpEnteGov": {
+      "tag": "tpEnteGov",
+      "id": "B32",
+      "description": "Tipo de ente governamental",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "pRedutor": {
+      "tag": "pRedutor",
+      "id": "B33",
+      "description": "Percentual de redução de aliquota em compra governamental",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "tpOperGov": {
+      "tag": "tpOperGov",
+      "id": "B34",
+      "description": "Tipo de operação com o ente governamental",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "refNFe": {
+      "tag": "refNFe",
+      "id": "BB02",
+      "description": "Chave de acesso da NF-e de antecipação de pagamento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 44,
+      "type": "C"
+    },
+    "refNFeSig": {
+      "tag": "refNFeSig",
+      "id": "BA02a",
+      "description": "Chave da NF-e com código numérico zerado (NT 2022.003)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 44,
+      "type": "N"
+    },
+    "refNF": {
+      "tag": "refNF",
+      "id": "BA03",
+      "description": "Informação da NF modelo 1/1A ou NF modelo 2 referenciada (alterado pela NT2016.002)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "AAMM": {
+      "tag": "AAMM",
+      "id": "BA12",
+      "description": "Ano e Mês de emissão da NF-e",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "CNPJ": {
+      "tag": "CNPJ",
+      "id": "ZD02",
+      "description": "CNPJ da pessoa jurídica responsável pelo sistema utilizado na emissão do documento fiscal eletrônico",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 14,
+      "type": "N"
+    },
+    "refNFP": {
+      "tag": "refNFP",
+      "id": "BA10",
+      "description": "Informações da NF de produtor rural referenciada",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "CPF": {
+      "tag": "CPF",
+      "id": "X05",
+      "description": "CPF do Transportador",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 11,
+      "type": "N"
+    },
+    "IE": {
+      "tag": "IE",
+      "id": "X07",
+      "description": "Inscrição Estadual do Transportador",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "refCTe": {
+      "tag": "refCTe",
+      "id": "BA19",
+      "description": "Chave de acesso do CT-e referenciada",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 44,
+      "type": "N"
+    },
+    "refECF": {
+      "tag": "refECF",
+      "id": "BA20",
+      "description": "Informações do Cupom Fiscal referenciado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nECF": {
+      "tag": "nECF",
+      "id": "BA22",
+      "description": "Número de ordem sequencial do ECF",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 3,
+      "type": "N"
+    },
+    "nCOO": {
+      "tag": "nCOO",
+      "id": "BA23",
+      "description": "Número do Contador de Ordem de Operação - COO",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 6,
+      "type": "N"
+    },
+    "xNome": {
+      "tag": "xNome",
+      "id": "X06",
+      "description": "Razão Social ou nome",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xFant": {
+      "tag": "xFant",
+      "id": "C04",
+      "description": "Nome fantasia",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xLgr": {
+      "tag": "xLgr",
+      "id": "G03",
+      "description": "Logradouro",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nro": {
+      "tag": "nro",
+      "id": "G04",
+      "description": "Número",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xCpl": {
+      "tag": "xCpl",
+      "id": "G05",
+      "description": "Complemento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xBairro": {
+      "tag": "xBairro",
+      "id": "G06",
+      "description": "Bairro",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "cMun": {
+      "tag": "cMun",
+      "id": "U14",
+      "description": "Código do Município de incidência do imposto",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 7,
+      "type": "N"
+    },
+    "xMun": {
+      "tag": "xMun",
+      "id": "X09",
+      "description": "Nome do município",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "UF": {
+      "tag": "UF",
+      "id": "X24",
+      "description": "Sigla da UF",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "C"
+    },
+    "CEP": {
+      "tag": "CEP",
+      "id": "G10",
+      "description": "Código do CEP",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 8,
+      "type": "N"
+    },
+    "cPais": {
+      "tag": "cPais",
+      "id": "U15",
+      "description": "Código do País onde o serviço foi prestado",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "xPais": {
+      "tag": "xPais",
+      "id": "G12",
+      "description": "Nome do País",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "fone": {
+      "tag": "fone",
+      "id": "ZD06",
+      "description": "Telefone da pessoa jurídica/física a ser contatada",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 14,
+      "type": "N"
+    },
+    "IEST": {
+      "tag": "IEST",
+      "id": "C18",
+      "description": "IE do Substituto Tributário",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "IM": {
+      "tag": "IM",
+      "id": "E18a",
+      "description": "Inscrição Municipal do Tomador do Serviço",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "CNAE": {
+      "tag": "CNAE",
+      "id": "C20",
+      "description": "CNAE fiscal",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 7,
+      "type": "N"
+    },
+    "CRT": {
+      "tag": "CRT",
+      "id": "C21",
+      "description": "Código de Regime Tributário",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "xOrgao": {
+      "tag": "xOrgao",
+      "id": "D03",
+      "description": "Órgão emitente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "matr": {
+      "tag": "matr",
+      "id": "D04",
+      "description": "Matrícula do agente do Fisco",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xAgente": {
+      "tag": "xAgente",
+      "id": "D05",
+      "description": "Nome do agente do Fisco",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nDAR": {
+      "tag": "nDAR",
+      "id": "D08",
+      "description": "Número do Documento de Arrecadação de Receita",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "dEmi": {
+      "tag": "dEmi",
+      "id": "D09",
+      "description": "Data de emissão do Documento de Arrecadação",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "vDAR": {
+      "tag": "vDAR",
+      "id": "D10",
+      "description": "Valor Total constante no Documento de arrecadação de Receita",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "repEmi": {
+      "tag": "repEmi",
+      "id": "D11",
+      "description": "Repartição Fiscal emitente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "dPag": {
+      "tag": "dPag",
+      "id": "YA03a",
+      "description": "Data do Pagamento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "idEstrangeiro": {
+      "tag": "idEstrangeiro",
+      "id": "E03a",
+      "description": "Identificação do destinatário no caso de comprador estrangeiro",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 20,
+      "type": "C"
+    },
+    "indIEDest": {
+      "tag": "indIEDest",
+      "id": "E16a",
+      "description": "Indicador da IE do Destinatário",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "ISUF": {
+      "tag": "ISUF",
+      "id": "E18",
+      "description": "Inscrição na SUFRAMA",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "email": {
+      "tag": "email",
+      "id": "ZD05",
+      "description": "E-mail da pessoa jurídica a ser contatada",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 60,
+      "type": "C"
+    },
+    "nItem": {
+      "tag": "nItem",
+      "id": "VC03",
+      "description": "Número do item do documento referenciado.",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 3,
+      "type": "N"
+    },
+    "cProd": {
+      "tag": "cProd",
+      "id": "I02",
+      "description": "Código do produto ou serviço",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "cEAN": {
+      "tag": "cEAN",
+      "id": "I03",
+      "description": "GTIN (Global Trade Item Number) do produto, antigo código EAN ou código de barras",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "cBarra": {
+      "tag": "cBarra",
+      "id": "I03a",
+      "description": "Código de barras diferente do padrão GTIN",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 30,
+      "type": "C"
+    },
+    "xProd": {
+      "tag": "xProd",
+      "id": "I04",
+      "description": "Descrição do produto ou serviço",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "NCM": {
+      "tag": "NCM",
+      "id": "I05",
+      "description": "Código NCM com 8 dígitos",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "NVE": {
+      "tag": "NVE",
+      "id": "I05a",
+      "description": "Codificação NVE - Nomenclatura de Valor Aduaneiro e Estatística.",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 6,
+      "type": "C"
+    },
+    "cBenef": {
+      "tag": "cBenef",
+      "id": "I05f",
+      "description": "Código de Benefício Fiscal na UF aplicado ao item.",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "cCredPresumido": {
+      "tag": "cCredPresumido",
+      "id": "I05h",
+      "description": "Código de Benefício Fiscal de Crédito Presumido na UF aplicado ao item",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "pCredPresumido": {
+      "tag": "pCredPresumido",
+      "id": "I05i",
+      "description": "Percentual do Crédito Presumido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vCredPresumido": {
+      "tag": "vCredPresumido",
+      "id": "I05j",
+      "description": "Valor do Crédito Presumido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "tpCredPresIBSZFM": {
+      "tag": "tpCredPresIBSZFM",
+      "id": "UB133",
+      "description": "Tipo de classificação de acordo com o art. 450, § 1º, da LC 214/25 para o cálculo do crédito presumido na ZFM",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "EXTIPI": {
+      "tag": "EXTIPI",
+      "id": "I06",
+      "description": "EX_TIPI",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "CFOP": {
+      "tag": "CFOP",
+      "id": "X16",
+      "description": "CFOP",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "uCom": {
+      "tag": "uCom",
+      "id": "I09",
+      "description": "Unidade Comercial",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "qCom": {
+      "tag": "qCom",
+      "id": "I10",
+      "description": "Quantidade Comercial",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vUnCom": {
+      "tag": "vUnCom",
+      "id": "I10a",
+      "description": "Valor Unitário de Comercialização",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 10,
+      "type": "N"
+    },
+    "vProd": {
+      "tag": "vProd",
+      "id": "W07",
+      "description": "Valor Total dos produtos e serviços",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "cEANTrib": {
+      "tag": "cEANTrib",
+      "id": "I12",
+      "description": "GTIN (Global Trade Item Number) da unidade tributável, antigo código EAN ou código de barras",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "cBarraTrib": {
+      "tag": "cBarraTrib",
+      "id": "I12a",
+      "description": "Código de Barras da unidade tributável que seja diferente do padrão GTIN",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 30,
+      "type": "C"
+    },
+    "uTrib": {
+      "tag": "uTrib",
+      "id": "UB09",
+      "description": "Unidade de Medida Tributável",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 6,
+      "type": "C"
+    },
+    "qTrib": {
+      "tag": "qTrib",
+      "id": "UB10",
+      "description": "Quantidade Tributável",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vUnTrib": {
+      "tag": "vUnTrib",
+      "id": "I14a",
+      "description": "Valor Unitário de tributação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 10,
+      "type": "N"
+    },
+    "vFrete": {
+      "tag": "vFrete",
+      "id": "W08",
+      "description": "Valor Total do Frete",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vSeg": {
+      "tag": "vSeg",
+      "id": "W09",
+      "description": "Valor Total do Seguro",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vDesc": {
+      "tag": "vDesc",
+      "id": "Y05",
+      "description": "Valor do desconto",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vOutro": {
+      "tag": "vOutro",
+      "id": "W22c",
+      "description": "Valor total outras retenções",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "indTot": {
+      "tag": "indTot",
+      "id": "I17b",
+      "description": "Indica se valor do Item (vProd) entra no valor total da NF-e (vProd)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "indBemMovelUsado": {
+      "tag": "indBemMovelUsado",
+      "id": "I17c",
+      "description": "Indicador de fornecimento de bem móvel usado",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "nDI": {
+      "tag": "nDI",
+      "id": "I19",
+      "description": "Número do Documento de Importação (DI, DSI, DIRE, DUImp)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "dDI": {
+      "tag": "dDI",
+      "id": "I20",
+      "description": "Data de Registro do documento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "xLocDesemb": {
+      "tag": "xLocDesemb",
+      "id": "I21",
+      "description": "Local de desembaraço",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "UFDesemb": {
+      "tag": "UFDesemb",
+      "id": "I22",
+      "description": "Sigla da UF onde ocorreu o Desembaraço Aduaneiro",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "C"
+    },
+    "dDesemb": {
+      "tag": "dDesemb",
+      "id": "I23",
+      "description": "Data do Desembaraço Aduaneiro",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "tpViaTransp": {
+      "tag": "tpViaTransp",
+      "id": "I23a",
+      "description": "Via de transporte internacional informada na Declaração de Importação (DI) ou na Declaração Única de Importação (DUImp) (NT 2020.005)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "vAFRMM": {
+      "tag": "vAFRMM",
+      "id": "I23b",
+      "description": "Valor da AFRMM - Adicional ao Frete para Renovação da Marinha Mercante",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "tpIntermedio": {
+      "tag": "tpIntermedio",
+      "id": "I23c",
+      "description": "Forma de importação quanto a intermediação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "UFTerceiro": {
+      "tag": "UFTerceiro",
+      "id": "I23e",
+      "description": "Sigla da UF do adquirente ou do encomendante",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "C"
+    },
+    "cExportador": {
+      "tag": "cExportador",
+      "id": "I24",
+      "description": "Código do Exportador",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nAdicao": {
+      "tag": "nAdicao",
+      "id": "I26",
+      "description": "Numero da Adição",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "nSeqAdic": {
+      "tag": "nSeqAdic",
+      "id": "I27",
+      "description": "Numero sequencial do item dentro da Adição (NT 2020.005)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "cFabricante": {
+      "tag": "cFabricante",
+      "id": "I28",
+      "description": "Código do fabricante estrangeiro",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vDescDI": {
+      "tag": "vDescDI",
+      "id": "I29",
+      "description": "Valor do desconto do item da DI – Adição",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "nDraw": {
+      "tag": "nDraw",
+      "id": "I51",
+      "description": "Número do ato concessório de Drawback",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 20,
+      "type": "C"
+    },
+    "nRE": {
+      "tag": "nRE",
+      "id": "I53",
+      "description": "Número do Registro de Exportação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 12,
+      "type": "N"
+    },
+    "chNFe": {
+      "tag": "chNFe",
+      "id": "I54",
+      "description": "Chave de Acesso da NF-e recebida para exportação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 44,
+      "type": "N"
+    },
+    "qExport": {
+      "tag": "qExport",
+      "id": "I55",
+      "description": "Quantidade do item realmente exportado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 114,
+      "type": "N"
+    },
+    "xPed": {
+      "tag": "xPed",
+      "id": "ZB03",
+      "description": "Pedido",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nItemPed": {
+      "tag": "nItemPed",
+      "id": "I61",
+      "description": "Item do Pedido de Compra",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 6,
+      "type": "N"
+    },
+    "nFCI": {
+      "tag": "nFCI",
+      "id": "I70",
+      "description": "Número de controle da FCI - Ficha de Conteúdo de Importação",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 36,
+      "type": "C"
+    },
+    "nLote": {
+      "tag": "nLote",
+      "id": "K02",
+      "description": "Número do Lote de medicamentos ou de matérias-primas farmacêuticas",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 20,
+      "type": "C"
+    },
+    "qLote": {
+      "tag": "qLote",
+      "id": "K03",
+      "description": "Quantidade de produto no Lote de medicamentos ou de matérias-primas farmacêuticas",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 83,
+      "type": "N"
+    },
+    "dFab": {
+      "tag": "dFab",
+      "id": "K04",
+      "description": "Data de fabricação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "dVal": {
+      "tag": "dVal",
+      "id": "K05",
+      "description": "Data de validade",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "cAgreg": {
+      "tag": "cAgreg",
+      "id": "I85",
+      "description": "Código de Agregação",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 20,
+      "type": "C"
+    },
+    "cProdFisco": {
+      "tag": "cProdFisco",
+      "id": "I86a",
+      "description": "Código Fiscal do Produto",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 14,
+      "type": "C"
+    },
+    "cOperNFF": {
+      "tag": "cOperNFF",
+      "id": "I86b",
+      "description": "Código da Operação NFF",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 5,
+      "type": "N"
+    },
+    "xEmb": {
+      "tag": "xEmb",
+      "id": "I87a",
+      "description": "Embalagem do produto",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 8,
+      "type": "C"
+    },
+    "qVolEmb": {
+      "tag": "qVolEmb",
+      "id": "I87b",
+      "description": "Volume do produto na embalagem",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 72,
+      "type": "N"
+    },
+    "uEmb": {
+      "tag": "uEmb",
+      "id": "I87c",
+      "description": "Unidade de Medida da Embalagem",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 8,
+      "type": "C"
+    },
+    "veicProd": {
+      "tag": "veicProd",
+      "id": "J01",
+      "description": "Detalhamento de Veículos novos",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "tpOp": {
+      "tag": "tpOp",
+      "id": "J02",
+      "description": "Tipo da operação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "chassi": {
+      "tag": "chassi",
+      "id": "J03",
+      "description": "Chassi do veículo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 17,
+      "type": "C"
+    },
+    "cCor": {
+      "tag": "cCor",
+      "id": "J04",
+      "description": "Cor",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xCor": {
+      "tag": "xCor",
+      "id": "J05",
+      "description": "Descrição da Cor",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "pot": {
+      "tag": "pot",
+      "id": "J06",
+      "description": "Potência Motor (CV)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "cilin": {
+      "tag": "cilin",
+      "id": "J07",
+      "description": "Cilindradas",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "pesoL": {
+      "tag": "pesoL",
+      "id": "X31",
+      "description": "Peso Líquido (em kg)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 123,
+      "type": "N"
+    },
+    "pesoB": {
+      "tag": "pesoB",
+      "id": "X32",
+      "description": "Peso Bruto (em kg)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 123,
+      "type": "N"
+    },
+    "nSerie": {
+      "tag": "nSerie",
+      "id": "L03",
+      "description": "Número de série da arma",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "tpComb": {
+      "tag": "tpComb",
+      "id": "J11",
+      "description": "Tipo de combustível",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nMotor": {
+      "tag": "nMotor",
+      "id": "J12",
+      "description": "Número de Motor",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "CMT": {
+      "tag": "CMT",
+      "id": "J13",
+      "description": "Capacidade Máxima de Tração",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 94,
+      "type": "C"
+    },
+    "dist": {
+      "tag": "dist",
+      "id": "J14",
+      "description": "Distância entre eixos",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "anoMod": {
+      "tag": "anoMod",
+      "id": "J16",
+      "description": "Ano Modelo de Fabricação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "anoFab": {
+      "tag": "anoFab",
+      "id": "J17",
+      "description": "Ano de Fabricação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "tpPint": {
+      "tag": "tpPint",
+      "id": "J18",
+      "description": "Tipo de Pintura",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "C"
+    },
+    "tpVeic": {
+      "tag": "tpVeic",
+      "id": "J19",
+      "description": "Tipo de Veículo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "espVeic": {
+      "tag": "espVeic",
+      "id": "J20",
+      "description": "Espécie de Veículo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "VIN": {
+      "tag": "VIN",
+      "id": "J21",
+      "description": "Condição do VIN",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "C"
+    },
+    "condVeic": {
+      "tag": "condVeic",
+      "id": "J22",
+      "description": "Condição do Veículo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "cMod": {
+      "tag": "cMod",
+      "id": "J23",
+      "description": "Código Marca Modelo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "cCorDENATRAN": {
+      "tag": "cCorDENATRAN",
+      "id": "J24",
+      "description": "Código da Cor",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "lota": {
+      "tag": "lota",
+      "id": "J25",
+      "description": "Capacidade máxima de lotação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "tpRest": {
+      "tag": "tpRest",
+      "id": "J26",
+      "description": "Restrição",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "med": {
+      "tag": "med",
+      "id": "K01",
+      "description": "Detalhamento de Medicamentos e de matérias-primas farmacêuticas",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "cProdANVISA": {
+      "tag": "cProdANVISA",
+      "id": "K01a",
+      "description": "Código de Produto da ANVISA",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xMotivoIsencao": {
+      "tag": "xMotivoIsencao",
+      "id": "K01b",
+      "description": "Motivo da isenção da ANVISA",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 255,
+      "type": "C"
+    },
+    "vPMC": {
+      "tag": "vPMC",
+      "id": "K06",
+      "description": "Preço máximo consumidor",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "arma": {
+      "tag": "arma",
+      "id": "L01",
+      "description": "Detalhamento de Armamento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "tpArma": {
+      "tag": "tpArma",
+      "id": "L02",
+      "description": "Indicador do tipo de arma de fogo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "nCano": {
+      "tag": "nCano",
+      "id": "L04",
+      "description": "Número de série do cano",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "descr": {
+      "tag": "descr",
+      "id": "L05",
+      "description": "Descrição completa da arma, compreendendo: calibre, marca, capacidade, tipo de funcionamento, comprimento e demais elementos que permitam a sua perfeita identificação.",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "comb": {
+      "tag": "comb",
+      "id": "LA01",
+      "description": "Informações específicas para combustíveis líquidos e lubrificantes",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "cProdANP": {
+      "tag": "cProdANP",
+      "id": "LA02",
+      "description": "Código de produto da ANP",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 9,
+      "type": "N"
+    },
+    "pMixGN": {
+      "tag": "pMixGN",
+      "id": "LA03",
+      "description": "Percentual de Gás Natural para o produto GLP (cProdANP=210203001)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 24,
+      "type": "N"
+    },
+    "descANP": {
+      "tag": "descANP",
+      "id": "LA03",
+      "description": "Descrição do produto conforme ANP",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 95,
+      "type": "N"
+    },
+    "pGLP": {
+      "tag": "pGLP",
+      "id": "LA03a",
+      "description": "Percentual do GLP derivado do petróleo no produto GLP (cProdANP=210203001)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 34,
+      "type": "N"
+    },
+    "pGNn": {
+      "tag": "pGNn",
+      "id": "LA03b",
+      "description": "Percentual de Gás Natural Nacional – GLGNn para o produto GLP (cProdANP=210203001)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 34,
+      "type": "N"
+    },
+    "pGNi": {
+      "tag": "pGNi",
+      "id": "LA03c",
+      "description": "Percentual de Gás Natural Importado – GLGNi para o produto GLP (cProdANP=210203001)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 34,
+      "type": "N"
+    },
+    "vPart": {
+      "tag": "vPart",
+      "id": "LA03d",
+      "description": "Valor de partida (cProdANP=210203001)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "CODIF": {
+      "tag": "CODIF",
+      "id": "LA04",
+      "description": "Código de autorização / registro do CODIF",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "qTemp": {
+      "tag": "qTemp",
+      "id": "LA05",
+      "description": "Quantidade de combustível faturada à temperatura ambiente.",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 124,
+      "type": "N"
+    },
+    "UFCons": {
+      "tag": "UFCons",
+      "id": "LA06",
+      "description": "Sigla da UF de consumo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "C"
+    },
+    "qBCProd": {
+      "tag": "qBCProd",
+      "id": "T04",
+      "description": "Quantidade Vendida",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vAliqProd": {
+      "tag": "vAliqProd",
+      "id": "T05",
+      "description": "Alíquota da COFINS (em reais)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vCIDE": {
+      "tag": "vCIDE",
+      "id": "LA10",
+      "description": "Valor da CIDE",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "nBico": {
+      "tag": "nBico",
+      "id": "LA12",
+      "description": "Número de identificação do bico utilizado no abastecimento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "nBomba": {
+      "tag": "nBomba",
+      "id": "LA13",
+      "description": "Número de identificação da bomba ao qual o bico está interligado",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "nTanque": {
+      "tag": "nTanque",
+      "id": "LA14",
+      "description": "Número de identificação do tanque ao qual o bico está interligado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "vEncIni": {
+      "tag": "vEncIni",
+      "id": "LA15",
+      "description": "Valor do Encerrante no início do abastecimento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 123,
+      "type": "N"
+    },
+    "vEncFin": {
+      "tag": "vEncFin",
+      "id": "LA16",
+      "description": "Valor do Encerrante no final do abastecimento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 123,
+      "type": "N"
+    },
+    "pBio": {
+      "tag": "pBio",
+      "id": "LA17",
+      "description": "Percentual do índice de mistura do Biodiesel (B100) no Óleo Diesel B ou do Etanol Anidro na Gasolina C instituído pelo órgão regulamentador",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 34,
+      "type": "N"
+    },
+    "indImport": {
+      "tag": "indImport",
+      "id": "LA19",
+      "description": "Indicador de importação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "cUFOrig": {
+      "tag": "cUFOrig",
+      "id": "LA20",
+      "description": "Código da UF",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "pOrig": {
+      "tag": "pOrig",
+      "id": "LA21",
+      "description": "Percentual originário para a UF",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 34,
+      "type": "N"
+    },
+    "nRECOPI": {
+      "tag": "nRECOPI",
+      "id": "LB01",
+      "description": "Número do RECOPI",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 20,
+      "type": "N"
+    },
+    "vTotTrib": {
+      "tag": "vTotTrib",
+      "id": "W16a",
+      "description": "Valor aproximado total de tributos federais, estaduais e municipais.",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "ICMS": {
+      "tag": "ICMS",
+      "id": "N01",
+      "description": "Informações do ICMS da Operação própria e ST",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "-"
+    },
+    "ICMS00": {
+      "tag": "ICMS00",
+      "id": "N02",
+      "description": "Grupo Tributação do ICMS= 00",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "orig": {
+      "tag": "orig",
+      "id": "N11",
+      "description": "Origem da mercadoria",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "CST": {
+      "tag": "CST",
+      "id": "UB13",
+      "description": "Código de Situação Tributária do IBS e CBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 3,
+      "type": "N"
+    },
+    "modBC": {
+      "tag": "modBC",
+      "id": "N13",
+      "description": "Modalidade de determinação da BC do ICMS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "vBC": {
+      "tag": "vBC",
+      "id": "W19",
+      "description": "Valor total Base de Cálculo do ISS",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pICMS": {
+      "tag": "pICMS",
+      "id": "N16",
+      "description": "Alíquota do imposto",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMS": {
+      "tag": "vICMS",
+      "id": "W04",
+      "description": "Valor Total do ICMS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pFCP": {
+      "tag": "pFCP",
+      "id": "N17b",
+      "description": "Percentual do ICMS relativo ao Fundo de Combate à Pobreza (FCP)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vFCP": {
+      "tag": "vFCP",
+      "id": "W04h",
+      "description": "Valor Total do FCP (Fundo de Combate à Pobreza)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "ICMS02": {
+      "tag": "ICMS02",
+      "id": "N02a",
+      "description": "Grupo Tributação do ICMS monofásico",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "qBCMono": {
+      "tag": "qBCMono",
+      "id": "W06b.1",
+      "description": "Valor total da quantidade tributada do ICMS monofásico próprio",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "adRemICMS": {
+      "tag": "adRemICMS",
+      "id": "N38",
+      "description": "Alíquota adRem do imposto",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMSMono": {
+      "tag": "vICMSMono",
+      "id": "W06c",
+      "description": "Valor total do ICMS monofásico próprio",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "ICMS10": {
+      "tag": "ICMS10",
+      "id": "N03",
+      "description": "Grupo Tributação do ICMS = 10",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vBCFCP": {
+      "tag": "vBCFCP",
+      "id": "N17a",
+      "description": "Valor da Base de Cálculo do FCP",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "modBCST": {
+      "tag": "modBCST",
+      "id": "N18",
+      "description": "Modalidade de determinação da BC do ICMS ST",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "pMVAST": {
+      "tag": "pMVAST",
+      "id": "N19",
+      "description": "Percentual da margem de valor Adicionado do ICMS ST",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "pRedBCST": {
+      "tag": "pRedBCST",
+      "id": "N20",
+      "description": "Percentual da Redução de BC do ICMS ST",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vBCST": {
+      "tag": "vBCST",
+      "id": "W05",
+      "description": "Base de Cálculo do ICMS ST",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pICMSST": {
+      "tag": "pICMSST",
+      "id": "N22",
+      "description": "Alíquota do imposto do ICMS ST",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMSST": {
+      "tag": "vICMSST",
+      "id": "N23",
+      "description": "Valor do ICMS ST",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vBCFCPST": {
+      "tag": "vBCFCPST",
+      "id": "N23a",
+      "description": "Valor da Base de Cálculo do FCP retido por Substituição Tributária",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pFCPST": {
+      "tag": "pFCPST",
+      "id": "N23b",
+      "description": "Percentual do FCP retido por Substituição Tributária",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vFCPST": {
+      "tag": "vFCPST",
+      "id": "W06a",
+      "description": "Valor Total do FCP (Fundo de Combate à Pobreza) retido por substituição tributária",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vICMSSTDeson": {
+      "tag": "vICMSSTDeson",
+      "id": "N33a",
+      "description": "Valor do ICMS-ST desonerado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "motDesICMSST": {
+      "tag": "motDesICMSST",
+      "id": "N33b",
+      "description": "Motivo da desoneração do ICMS- ST",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "ICMS15": {
+      "tag": "ICMS15",
+      "id": "N03a",
+      "description": "Grupo Tributação do ICMS monofásico",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "qBCMonoReten": {
+      "tag": "qBCMonoReten",
+      "id": "W06c.1",
+      "description": "Valor total da quantidade tributada do ICMS monofásico sujeito a retenção",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "adRemICMSReten": {
+      "tag": "adRemICMSReten",
+      "id": "N40",
+      "description": "Alíquota ad rem do imposto com retenção",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMSMonoReten": {
+      "tag": "vICMSMonoReten",
+      "id": "W06d",
+      "description": "Valor total do ICMS monofásico sujeito a retenção",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pRedAdRem": {
+      "tag": "pRedAdRem",
+      "id": "N47",
+      "description": "Percentual de redução do valor da alíquota adrem do ICMS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 32,
+      "type": "N"
+    },
+    "motRedAdRem": {
+      "tag": "motRedAdRem",
+      "id": "N48",
+      "description": "Motivo da redução do adrem",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "ICMS20": {
+      "tag": "ICMS20",
+      "id": "N04",
+      "description": "Grupo Tributação do ICMS = 20",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "pRedBC": {
+      "tag": "pRedBC",
+      "id": "N14",
+      "description": "Percentual da Redução de BC",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMSDeson": {
+      "tag": "vICMSDeson",
+      "id": "W04a",
+      "description": "Valor Total do ICMS desonerado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "motDesICMS": {
+      "tag": "motDesICMS",
+      "id": "N28",
+      "description": "Motivo da desoneração do ICMS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "indDeduzDeson": {
+      "tag": "indDeduzDeson",
+      "id": "N28b",
+      "description": "Indica se o valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd).",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "ICMS30": {
+      "tag": "ICMS30",
+      "id": "N05",
+      "description": "Grupo Tributação do ICMS = 30",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "ICMS40": {
+      "tag": "ICMS40",
+      "id": "N06",
+      "description": "Grupo Tributação ICMS = 40, 41, 50",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "ICMS51": {
+      "tag": "ICMS51",
+      "id": "N07",
+      "description": "Grupo Tributação do ICMS = 51",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "cBenefRBC": {
+      "tag": "cBenefRBC",
+      "id": "N14a",
+      "description": "Código de Benefício Fiscal na UF aplicado ao item quando houver RBC.",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "vICMSOp": {
+      "tag": "vICMSOp",
+      "id": "N16b",
+      "description": "Valor do ICMS da Operação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pDif": {
+      "tag": "pDif",
+      "id": "UB60",
+      "description": "Percentual do diferimento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMSDif": {
+      "tag": "vICMSDif",
+      "id": "N16d",
+      "description": "Valor do ICMS diferido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pFCPDif": {
+      "tag": "pFCPDif",
+      "id": "N17d",
+      "description": "Percentual do diferimento do ICMS relativo ao Fundo de Combate à Pobreza (FCP)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vFCPDif": {
+      "tag": "vFCPDif",
+      "id": "N17e",
+      "description": "Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) diferido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vFCPEfet": {
+      "tag": "vFCPEfet",
+      "id": "N17f",
+      "description": "Valor efetivo do ICMS relativo ao Fundo de Combate à Pobreza (FCP)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "ICMS53": {
+      "tag": "ICMS53",
+      "id": "N07a",
+      "description": "Grupo Tributação do ICMS monofásico",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vICMSMonoOp": {
+      "tag": "vICMSMonoOp",
+      "id": "N41a",
+      "description": "Valor do ICMS da operação",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vICMSMonoDif": {
+      "tag": "vICMSMonoDif",
+      "id": "N43",
+      "description": "Valor do ICMS diferido",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "ICMS60": {
+      "tag": "ICMS60",
+      "id": "N08",
+      "description": "Grupo Tributação do ICMS = 60",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vBCSTRet": {
+      "tag": "vBCSTRet",
+      "id": "N26",
+      "description": "Valor da BC do ICMS ST retido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pST": {
+      "tag": "pST",
+      "id": "N26a",
+      "description": "Alíquota suportada pelo Consumidor Final",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMSSubstituto": {
+      "tag": "vICMSSubstituto",
+      "id": "N26b",
+      "description": "Valor do ICMS próprio do Substituto",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vICMSSTRet": {
+      "tag": "vICMSSTRet",
+      "id": "N27",
+      "description": "Valor do ICMS ST retido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vBCFCPSTRet": {
+      "tag": "vBCFCPSTRet",
+      "id": "N27a",
+      "description": "Valor da Base de Cálculo do FCP retido anteriormente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pFCPSTRet": {
+      "tag": "pFCPSTRet",
+      "id": "N27b",
+      "description": "Percentual do FCP retido anteriormente por Substituição Tributária",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vFCPSTRet": {
+      "tag": "vFCPSTRet",
+      "id": "W06b",
+      "description": "Valor Total do FCP retido anteriormente por Substituição Tributária",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pRedBCEfet": {
+      "tag": "pRedBCEfet",
+      "id": "N34",
+      "description": "Percentual de redução da base de cálculo efetiva",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vBCEfet": {
+      "tag": "vBCEfet",
+      "id": "N35",
+      "description": "Valor da base de cálculo efetiva",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pICMSEfet": {
+      "tag": "pICMSEfet",
+      "id": "N36",
+      "description": "Alíquota do ICMS efetiva",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMSEfet": {
+      "tag": "vICMSEfet",
+      "id": "N37",
+      "description": "Valor do ICMS efetivo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "ICMS61": {
+      "tag": "ICMS61",
+      "id": "N08a",
+      "description": "Grupo Tributação do ICMS monofásico",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "qBCMonoRet": {
+      "tag": "qBCMonoRet",
+      "id": "UB95",
+      "description": "Quantidade tributada retida anteriormente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "adRemICMSRet": {
+      "tag": "adRemICMSRet",
+      "id": "N44",
+      "description": "Alíquota ad rem do imposto retido anteriormente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMSMonoRet": {
+      "tag": "vICMSMonoRet",
+      "id": "W06e",
+      "description": "Valor total do ICMS monofásico retido anteriormente",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "ICMS70": {
+      "tag": "ICMS70",
+      "id": "N09",
+      "description": "Grupo Tributação do ICMS = 70",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "ICMS90": {
+      "tag": "ICMS90",
+      "id": "N10",
+      "description": "Grupo Tributação do ICMS = 90",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "ICMSPart": {
+      "tag": "ICMSPart",
+      "id": "N10a",
+      "description": "Grupo de Partilha do ICMS entre a UF de origem e UF de destino ou a UF definida na legislação.",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "pBCOp": {
+      "tag": "pBCOp",
+      "id": "N25",
+      "description": "Percentual da BC operação própria",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "UFST": {
+      "tag": "UFST",
+      "id": "N24",
+      "description": "UF para qual é devido o ICMS ST",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "C"
+    },
+    "ICMSST": {
+      "tag": "ICMSST",
+      "id": "N10b",
+      "description": "Grupo de Repasse de ICMS ST retido anteriormente em operações interestaduais com repasses através do Substituto Tributário",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vBCSTDest": {
+      "tag": "vBCSTDest",
+      "id": "N31",
+      "description": "Valor da BC do ICMS ST da UF destino",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vICMSSTDest": {
+      "tag": "vICMSSTDest",
+      "id": "N32",
+      "description": "Valor do ICMS ST da UF destino",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "ICMSSN101": {
+      "tag": "ICMSSN101",
+      "id": "N10c",
+      "description": "Grupo CRT=1 – Simples Nacional e CSOSN=101",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "CSOSN": {
+      "tag": "CSOSN",
+      "id": "N12a",
+      "description": "Código de Situação da Operação – SIMPLES NACIONAL",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 3,
+      "type": "N"
+    },
+    "pCredSN": {
+      "tag": "pCredSN",
+      "id": "N29",
+      "description": "Alíquota aplicável de cálculo do crédito (Simples Nacional).",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vCredICMSSN": {
+      "tag": "vCredICMSSN",
+      "id": "N30",
+      "description": "Valor crédito do ICMS que pode ser aproveitado nos termos do art. 23 da LC 123/2006 (Simples Nacional)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "ICMSSN102": {
+      "tag": "ICMSSN102",
+      "id": "N10d",
+      "description": "Grupo CRT=1 – Simples Nacional, CRT=4 –  MEI e CSOSN=102, 103, 300 ou 400",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "ICMSSN201": {
+      "tag": "ICMSSN201",
+      "id": "N10e",
+      "description": "Grupo CRT=1 – Simples Nacional e CSOSN=201",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "ICMSSN202": {
+      "tag": "ICMSSN202",
+      "id": "N10f",
+      "description": "Grupo CRT=1 – Simples Nacional e CSOSN=202 ou 203",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "ICMSSN500": {
+      "tag": "ICMSSN500",
+      "id": "N10g",
+      "description": "Grupo CRT=1 – Simples Nacional e CSOSN = 500",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "ICMSSN900": {
+      "tag": "ICMSSN900",
+      "id": "N10h",
+      "description": "Grupo CRT=1 – Simples Nacional, CRT=4 – MEI e CSOSN=900",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vBCUFDest": {
+      "tag": "vBCUFDest",
+      "id": "NA03",
+      "description": "Valor da BC do ICMS na UF de destino",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vBCFCPUFDest": {
+      "tag": "vBCFCPUFDest",
+      "id": "NA04",
+      "description": "Valor da BC FCP na UF de destino",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "C"
+    },
+    "pFCPUFDest": {
+      "tag": "pFCPUFDest",
+      "id": "NA05",
+      "description": "Percentual do ICMS relativo ao Fundo de Combate à Pobreza (FCP) na UF de destino",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "pICMSUFDest": {
+      "tag": "pICMSUFDest",
+      "id": "NA07",
+      "description": "Alíquota interna da UF de destino",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "pICMSInter": {
+      "tag": "pICMSInter",
+      "id": "NA09",
+      "description": "Alíquota interestadual das UF envolvidas",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 22,
+      "type": "N"
+    },
+    "pICMSInterPart": {
+      "tag": "pICMSInterPart",
+      "id": "NA11",
+      "description": "Percentual provisório de partilha do ICMS Interestadual",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vFCPUFDest": {
+      "tag": "vFCPUFDest",
+      "id": "W04c",
+      "description": "Valor total do ICMS relativo Fundo de Combate à Pobreza (FCP) da UF de destino",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vICMSUFDest": {
+      "tag": "vICMSUFDest",
+      "id": "W04e",
+      "description": "Valor total do ICMS Interestadual para a UF de destino",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vICMSUFRemet": {
+      "tag": "vICMSUFRemet",
+      "id": "W04g",
+      "description": "Valor total do ICMS Interestadual para a UF do remetente",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "IPI": {
+      "tag": "IPI",
+      "id": "O01",
+      "description": "Grupo IPI",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "clEnq": {
+      "tag": "clEnq",
+      "id": "O02",
+      "description": "Classe de enquadramento do IPI para Cigarros e Bebidas",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "CNPJProd": {
+      "tag": "CNPJProd",
+      "id": "O03",
+      "description": "CNPJ do produtor da mercadoria, quando diferente do emitente. Somente para os casos de exportação direta ou indireta.",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 14,
+      "type": "N"
+    },
+    "cSelo": {
+      "tag": "cSelo",
+      "id": "O04",
+      "description": "Código do selo de controle IPI",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "qSelo": {
+      "tag": "qSelo",
+      "id": "O05",
+      "description": "Quantidade de selo de controle",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "cEnq": {
+      "tag": "cEnq",
+      "id": "O06",
+      "description": "Código de Enquadramento Legal do IPI",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "IPITrib": {
+      "tag": "IPITrib",
+      "id": "O07",
+      "description": "Grupo do CST 00, 49, 50 e 99",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "-x-": {
+      "tag": "-x-",
+      "id": "X17.1",
+      "description": "Sequência XML",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "pIPI": {
+      "tag": "pIPI",
+      "id": "O13",
+      "description": "Alíquota do IPI",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "qUnid": {
+      "tag": "qUnid",
+      "id": "O11",
+      "description": "Quantidade total na unidade padrão para tributação (somente para os produtos tributados por unidade)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vUnid": {
+      "tag": "vUnid",
+      "id": "O12",
+      "description": "Valor por Unidade Tributável",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vIPI": {
+      "tag": "vIPI",
+      "id": "W12",
+      "description": "Valor Total do IPI",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "IPINT": {
+      "tag": "IPINT",
+      "id": "O08",
+      "description": "Grupo CST 01, 02, 03, 04, 51, 52, 53,",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "II": {
+      "tag": "II",
+      "id": "P01",
+      "description": "Grupo Imposto de Importação",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vDespAdu": {
+      "tag": "vDespAdu",
+      "id": "P03",
+      "description": "Valor despesas aduaneiras",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vII": {
+      "tag": "vII",
+      "id": "W11",
+      "description": "Valor Total do II",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vIOF": {
+      "tag": "vIOF",
+      "id": "P05",
+      "description": "Valor Imposto sobre Operações Financeiras",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "PISAliq": {
+      "tag": "PISAliq",
+      "id": "Q02",
+      "description": "Grupo PIS tributado pela alíquota",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "pPIS": {
+      "tag": "pPIS",
+      "id": "R03",
+      "description": "Alíquota do PIS (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vPIS": {
+      "tag": "vPIS",
+      "id": "W21",
+      "description": "Valor total do PIS sobre serviços",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "PISQtde": {
+      "tag": "PISQtde",
+      "id": "Q03",
+      "description": "Grupo PIS tributado por Qtde",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "PISNT": {
+      "tag": "PISNT",
+      "id": "Q04",
+      "description": "Grupo PIS não tributado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "PISOutr": {
+      "tag": "PISOutr",
+      "id": "Q05",
+      "description": "Grupo PIS Outras Operações",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "indSomaPISST": {
+      "tag": "indSomaPISST",
+      "id": "R07",
+      "description": "Indica se o valor do PISST compõe o valor total da NF-e",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "COFINSAliq": {
+      "tag": "COFINSAliq",
+      "id": "S02",
+      "description": "Grupo COFINS tributado pela alíquota",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "pCOFINS": {
+      "tag": "pCOFINS",
+      "id": "T03",
+      "description": "Alíquota da COFINS (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vCOFINS": {
+      "tag": "vCOFINS",
+      "id": "W22",
+      "description": "Valor total da COFINS sobre serviços",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "COFINSQtde": {
+      "tag": "COFINSQtde",
+      "id": "S03",
+      "description": "Grupo de COFINS tributado por Qtde",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "COFINSNT": {
+      "tag": "COFINSNT",
+      "id": "S04",
+      "description": "Grupo COFINS não tributado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "COFINSOutr": {
+      "tag": "COFINSOutr",
+      "id": "S05",
+      "description": "Grupo COFINS Outras Operações",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "indSomaCOFINSST": {
+      "tag": "indSomaCOFINSST",
+      "id": "T07",
+      "description": "Indica se o valor da COFINS ST compõe o valor total da NFe",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "ISSQN": {
+      "tag": "ISSQN",
+      "id": "U01",
+      "description": "Grupo ISSQN",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vAliq": {
+      "tag": "vAliq",
+      "id": "U03",
+      "description": "Alíquota do ISSQN",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vISSQN": {
+      "tag": "vISSQN",
+      "id": "U04",
+      "description": "Valor do ISSQN",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "cListServ": {
+      "tag": "cListServ",
+      "id": "U06",
+      "description": "Item da Lista de Serviços",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 5,
+      "type": "C"
+    },
+    "vDeducao": {
+      "tag": "vDeducao",
+      "id": "W22b",
+      "description": "Valor total dedução para redução da Base de Cálculo",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vDescIncond": {
+      "tag": "vDescIncond",
+      "id": "W22d",
+      "description": "Valor total desconto incondicionado",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vDescCond": {
+      "tag": "vDescCond",
+      "id": "W22e",
+      "description": "Valor total desconto condicionado",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vISSRet": {
+      "tag": "vISSRet",
+      "id": "W22f",
+      "description": "Valor total retenção ISS",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "indISS": {
+      "tag": "indISS",
+      "id": "U12",
+      "description": "Indicador da exigibilidade do ISS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "cServico": {
+      "tag": "cServico",
+      "id": "U13",
+      "description": "Código do serviço prestado dentro do município",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nProcesso": {
+      "tag": "nProcesso",
+      "id": "U16",
+      "description": "Número do processo judicial ou administrativo de suspensão da exigibilidade",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "indIncentivo": {
+      "tag": "indIncentivo",
+      "id": "U17",
+      "description": "Indicador de incentivo Fiscal",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "pDevol": {
+      "tag": "pDevol",
+      "id": "UA02",
+      "description": "Percentual da mercadoria devolvida",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 32,
+      "type": "N"
+    },
+    "vIPIDevol": {
+      "tag": "vIPIDevol",
+      "id": "W12a",
+      "description": "Valor Total do IPI devolvido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "CSTIS": {
+      "tag": "CSTIS",
+      "id": "UB02",
+      "description": "Código de Situação Tributária do Imposto Seletivo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 3,
+      "type": "N"
+    },
+    "cClassTribIS": {
+      "tag": "cClassTribIS",
+      "id": "UB03",
+      "description": "Código de Classificação Tributária do Imposto Seletivo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 6,
+      "type": "N"
+    },
+    "vBCIS": {
+      "tag": "vBCIS",
+      "id": "UB05",
+      "description": "Valor da Base de Cálculo do ImpostoSeletivo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pIS": {
+      "tag": "pIS",
+      "id": "UB06",
+      "description": "Alíquota do Imposto Seletivo (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "pISEspec": {
+      "tag": "pISEspec",
+      "id": "UB07",
+      "description": "Alíquota específica por unidade de medida apropriada (em percentual)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vIS": {
+      "tag": "vIS",
+      "id": "W33",
+      "description": "Total do imposto seletivo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "cClassTrib": {
+      "tag": "cClassTrib",
+      "id": "UB14",
+      "description": "Código de Classificação Tributária do IBS e CBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 6,
+      "type": "N"
+    },
+    "indDoacao": {
+      "tag": "indDoacao",
+      "id": "UB14a",
+      "description": "Indica a natureza da operação de doação, orientando a apuração e a geração de débitos ou estornos conforme o cenário",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "C"
+    },
+    "gIBSCBS": {
+      "tag": "gIBSCBS",
+      "id": "UB15",
+      "description": "Grupo de Informações do IBS e da CBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "-"
+    },
+    "gIBSUF": {
+      "tag": "gIBSUF",
+      "id": "UB17",
+      "description": "Grupo de Informações do IBS para a UF",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "-"
+    },
+    "pIBSUF": {
+      "tag": "pIBSUF",
+      "id": "UB18",
+      "description": "Alíquota do IBS de competência das UF (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "gDif": {
+      "tag": "gDif",
+      "id": "UB21",
+      "description": "Grupo de Informações do Diferimento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "-"
+    },
+    "vDif": {
+      "tag": "vDif",
+      "id": "W53",
+      "description": "Valor total do diferimento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vDevTrib": {
+      "tag": "vDevTrib",
+      "id": "W54",
+      "description": "Valor total de devolução de tributos",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pRedAliq": {
+      "tag": "pRedAliq",
+      "id": "UB65",
+      "description": "Percentual da redução de alíquota do cClassTrib",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "pAliqEfet": {
+      "tag": "pAliqEfet",
+      "id": "UB66",
+      "description": "Alíquota Efetiva da CBS que será aplicada a Base de Cálculo (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vIBSUF": {
+      "tag": "vIBSUF",
+      "id": "W41",
+      "description": "Valor total do IBS da UF",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pIBSMun": {
+      "tag": "pIBSMun",
+      "id": "UB37",
+      "description": "Alíquota do IBS de competência do Município (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vIBSMun": {
+      "tag": "vIBSMun",
+      "id": "W46",
+      "description": "Valor total do IBS do Município",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vIBS": {
+      "tag": "vIBS",
+      "id": "W47",
+      "description": "Valor total do IBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pCBS": {
+      "tag": "pCBS",
+      "id": "UB56",
+      "description": "Alíquota da CBS (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vCBS": {
+      "tag": "vCBS",
+      "id": "W56",
+      "description": "Valor total da CBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "CSTReg": {
+      "tag": "CSTReg",
+      "id": "UB69",
+      "description": "Código de Situação Tributária do IBS e CBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 3,
+      "type": "N"
+    },
+    "cClassTribReg": {
+      "tag": "cClassTribReg",
+      "id": "UB70",
+      "description": "Código de Classificação Tributária do IBS e CBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 6,
+      "type": "N"
+    },
+    "pAliqEfetRegIBSUF": {
+      "tag": "pAliqEfetRegIBSUF",
+      "id": "UB71",
+      "description": "Valor da alíquota do IBS da UF (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vTribRegIBSUF": {
+      "tag": "vTribRegIBSUF",
+      "id": "UB72",
+      "description": "Valor do Tributo do IBS da UF",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pAliqEfetRegIBSMun": {
+      "tag": "pAliqEfetRegIBSMun",
+      "id": "UB72a",
+      "description": "Valor da alíquota do IBS do Município (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vTribRegIBSMun": {
+      "tag": "vTribRegIBSMun",
+      "id": "UB72b",
+      "description": "Valor do Tributo do IBS do Município",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pAliqEfetRegCBS": {
+      "tag": "pAliqEfetRegCBS",
+      "id": "UB72c",
+      "description": "Valor da alíquota da CBS (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vTribRegCBS": {
+      "tag": "vTribRegCBS",
+      "id": "UB72d",
+      "description": "Valor do Tributo da CBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "cCredPres": {
+      "tag": "cCredPres",
+      "id": "UB122",
+      "description": "Código de Classificação do Crédito Presumido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "pCredPres": {
+      "tag": "pCredPres",
+      "id": "UB128",
+      "description": "Percentual do Crédito Presumido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vCredPres": {
+      "tag": "vCredPres",
+      "id": "W56a",
+      "description": "Valor total do crédito presumido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vCredPresCondSus": {
+      "tag": "vCredPresCondSus",
+      "id": "W56b",
+      "description": "Valor total do crédito presumido em condição suspensiva.",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pAliqIBSUF": {
+      "tag": "pAliqIBSUF",
+      "id": "UB82b",
+      "description": "Alíquota do IBS de competência do Estado (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vTribIBSUF": {
+      "tag": "vTribIBSUF",
+      "id": "UB82c",
+      "description": "Valor do Tributo do IBS da UF calculado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pAliqIBSMun": {
+      "tag": "pAliqIBSMun",
+      "id": "UB82d",
+      "description": "Alíquota do IBS de competência do Município (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vTribIBSMun": {
+      "tag": "vTribIBSMun",
+      "id": "UB82e",
+      "description": "Valor do Tributo do IBS do Município calculado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pAliqCBS": {
+      "tag": "pAliqCBS",
+      "id": "UB82f",
+      "description": "Alíquota da CBS (em percentual)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vTribCBS": {
+      "tag": "vTribCBS",
+      "id": "UB82g",
+      "description": "Valor do Tributo da CBS calculado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "gIBSCBSMono": {
+      "tag": "gIBSCBSMono",
+      "id": "UB84",
+      "description": "Grupo de Informações do IBS e CBS em operações com imposto monofásico",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "adRemIBS": {
+      "tag": "adRemIBS",
+      "id": "UB86",
+      "description": "Alíquota ad rem do IBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "adRemCBS": {
+      "tag": "adRemCBS",
+      "id": "UB87",
+      "description": "Alíquota ad rem da CBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vIBSMono": {
+      "tag": "vIBSMono",
+      "id": "W58",
+      "description": "Total do IBS monofásico",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vCBSMono": {
+      "tag": "vCBSMono",
+      "id": "W59",
+      "description": "Total da CBS monofásica",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "adRemIBSReten": {
+      "tag": "adRemIBSReten",
+      "id": "UB92",
+      "description": "Alíquota ad rem do IBS sujeito a retenção",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vIBSMonoReten": {
+      "tag": "vIBSMonoReten",
+      "id": "W59a",
+      "description": "Total do IBS monofásico sujeito a retenção",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "adRemCBSReten": {
+      "tag": "adRemCBSReten",
+      "id": "UB93a",
+      "description": "Alíquota ad rem da CBS sujeito a retenção",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vCBSMonoReten": {
+      "tag": "vCBSMonoReten",
+      "id": "W59b",
+      "description": "Total da CBS monofásica sujeita a retenção",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "adRemIBSRet": {
+      "tag": "adRemIBSRet",
+      "id": "UB96",
+      "description": "Alíquota ad rem do IBS retido anteriormente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vIBSMonoRet": {
+      "tag": "vIBSMonoRet",
+      "id": "W59c",
+      "description": "Total do IBS monofásico retido anteriormente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "adRemCBSRet": {
+      "tag": "adRemCBSRet",
+      "id": "UB98",
+      "description": "Alíquota ad rem da CBS retida anteriormente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vCBSMonoRet": {
+      "tag": "vCBSMonoRet",
+      "id": "W59d",
+      "description": "Total da CBS monofásica retida anteriormente",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pDifIBS": {
+      "tag": "pDifIBS",
+      "id": "UB100",
+      "description": "Percentual do diferimento do imposto monofásico",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vIBSMonoDif": {
+      "tag": "vIBSMonoDif",
+      "id": "UB101",
+      "description": "Valor do IBS monofásico diferido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pDifCBS": {
+      "tag": "pDifCBS",
+      "id": "UB102",
+      "description": "Percentual do diferimento do imposto monofásico",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vCBSMonoDif": {
+      "tag": "vCBSMonoDif",
+      "id": "UB103",
+      "description": "Valor da CBS Monofásica diferida.",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vTotIBSMonoItem": {
+      "tag": "vTotIBSMonoItem",
+      "id": "UB104",
+      "description": "Total de IBS Monofásico.",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vTotCBSMonoItem": {
+      "tag": "vTotCBSMonoItem",
+      "id": "UB105",
+      "description": "Total da CBS Monofásica",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "gTransfCred": {
+      "tag": "gTransfCred",
+      "id": "UB106",
+      "description": "Transferências de Crédito",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vCredPresIBSZFM": {
+      "tag": "vCredPresIBSZFM",
+      "id": "UB134",
+      "description": "Valor do crédito presumido calculado sobre o saldo devedor apurado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "gAjusteCompet": {
+      "tag": "gAjusteCompet",
+      "id": "UB112",
+      "description": "Ajuste de Competência",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "-"
+    },
+    "competApur": {
+      "tag": "competApur",
+      "id": "UB132",
+      "description": "Ano e mês referência do período de apuração (AAAA-MM)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 7,
+      "type": "C"
+    },
+    "gEstornoCred": {
+      "tag": "gEstornoCred",
+      "id": "UB116",
+      "description": "Estorno de Crédito",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "-"
+    },
+    "vIBSEstCred": {
+      "tag": "vIBSEstCred",
+      "id": "W59f",
+      "description": "Valor total do IBS estornado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vCBSEstCred": {
+      "tag": "vCBSEstCred",
+      "id": "W59g",
+      "description": "Valor total da CBS estornada",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "gCredPresOper": {
+      "tag": "gCredPresOper",
+      "id": "UB120",
+      "description": "Crédito Presumido da Operação",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "-"
+    },
+    "vBCCredPres": {
+      "tag": "vBCCredPres",
+      "id": "UB121",
+      "description": "Valor da Base de Cálculo do Crédito Presumido da Operação",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "gCredPresIBSZFM": {
+      "tag": "gCredPresIBSZFM",
+      "id": "UB131",
+      "description": "Grupo para apropriação de crédito presumido de IBS sobre o saldo devedor na ZFM (art. 450, § 1º, LC 214/25)",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "-"
+    },
+    "infAdProd": {
+      "tag": "infAdProd",
+      "id": "V01",
+      "description": "Informações Adicionais do Produto",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 500,
+      "type": "C"
+    },
+    "xCampo": {
+      "tag": "xCampo",
+      "id": "Z08",
+      "description": "Identificação do campo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xTexto": {
+      "tag": "xTexto",
+      "id": "Z09",
+      "description": "Conteúdo do campo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vItem": {
+      "tag": "vItem",
+      "id": "VB01",
+      "description": "Valor Total do Item da NF-e",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "chaveAcesso": {
+      "tag": "chaveAcesso",
+      "id": "VC02",
+      "description": "Chave de acesso do DF-e referenciado",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 44,
+      "type": "N"
+    },
+    "vST": {
+      "tag": "vST",
+      "id": "W06",
+      "description": "Valor Total do ICMS ST",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vNF": {
+      "tag": "vNF",
+      "id": "W16",
+      "description": "Valor Total da NF-e",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vServ": {
+      "tag": "vServ",
+      "id": "X12",
+      "description": "Valor do Serviço",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vISS": {
+      "tag": "vISS",
+      "id": "W20",
+      "description": "Valor total do ISS",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "dCompet": {
+      "tag": "dCompet",
+      "id": "W22a",
+      "description": "Data da prestação do serviço",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 8,
+      "type": "N"
+    },
+    "cRegTrib": {
+      "tag": "cRegTrib",
+      "id": "W22g",
+      "description": "Código do Regime Especial de Tributação",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "vRetPIS": {
+      "tag": "vRetPIS",
+      "id": "W24",
+      "description": "Valor Retido de PIS",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vRetCOFINS": {
+      "tag": "vRetCOFINS",
+      "id": "W25",
+      "description": "Valor Retido de COFINS",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vRetCSLL": {
+      "tag": "vRetCSLL",
+      "id": "W26",
+      "description": "Valor Retido de CSLL",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vBCIRRF": {
+      "tag": "vBCIRRF",
+      "id": "W27",
+      "description": "Base de Cálculo do IRRF",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vIRRF": {
+      "tag": "vIRRF",
+      "id": "W28",
+      "description": "Valor Retido do IRRF",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vBCRetPrev": {
+      "tag": "vBCRetPrev",
+      "id": "W29",
+      "description": "Base de Cálculo da Retenção da Previdência Social",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vRetPrev": {
+      "tag": "vRetPrev",
+      "id": "W30",
+      "description": "Valor da Retenção da Previdência Social",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vBCIBSCBS": {
+      "tag": "vBCIBSCBS",
+      "id": "W35",
+      "description": "Valor total da BC do IBS e da CBS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vNFTot": {
+      "tag": "vNFTot",
+      "id": "W60",
+      "description": "Valor total da NF-e com IBS / CBS / IS",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "modFrete": {
+      "tag": "modFrete",
+      "id": "X02",
+      "description": "Modalidade do frete",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "xEnder": {
+      "tag": "xEnder",
+      "id": "X08",
+      "description": "Endereço Completo",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vBCRet": {
+      "tag": "vBCRet",
+      "id": "X13",
+      "description": "BC da Retenção do ICMS",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "pICMSRet": {
+      "tag": "pICMSRet",
+      "id": "X14",
+      "description": "Alíquota da Retenção",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 4,
+      "type": "N"
+    },
+    "vICMSRet": {
+      "tag": "vICMSRet",
+      "id": "X15",
+      "description": "Valor do ICMS Retido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "placa": {
+      "tag": "placa",
+      "id": "X23",
+      "description": "Placa do Veículo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 7,
+      "type": "C"
+    },
+    "RNTC": {
+      "tag": "RNTC",
+      "id": "X25",
+      "description": "Registro Nacional de Transportador de Carga (ANTT)",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vagao": {
+      "tag": "vagao",
+      "id": "X25a",
+      "description": "Identificação do vagão",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "balsa": {
+      "tag": "balsa",
+      "id": "X25b",
+      "description": "Identificação da balsa",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "qVol": {
+      "tag": "qVol",
+      "id": "X27",
+      "description": "Quantidade de volumes transportados",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "esp": {
+      "tag": "esp",
+      "id": "X28",
+      "description": "Espécie dos volumes transportados",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "marca": {
+      "tag": "marca",
+      "id": "X29",
+      "description": "Marca dos volumes transportados",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 60,
+      "type": "C"
+    },
+    "nVol": {
+      "tag": "nVol",
+      "id": "X30",
+      "description": "Numeração dos volumes transportados",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nLacre": {
+      "tag": "nLacre",
+      "id": "X34",
+      "description": "Número dos Lacres",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nFat": {
+      "tag": "nFat",
+      "id": "Y03",
+      "description": "Número da Fatura",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vOrig": {
+      "tag": "vOrig",
+      "id": "Y04",
+      "description": "Valor Original da Fatura",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vLiq": {
+      "tag": "vLiq",
+      "id": "Y06",
+      "description": "Valor Líquido da Fatura",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "nDup": {
+      "tag": "nDup",
+      "id": "Y08",
+      "description": "Número da Parcela",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "dVenc": {
+      "tag": "dVenc",
+      "id": "Y09",
+      "description": "Data de vencimento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "D"
+    },
+    "vDup": {
+      "tag": "vDup",
+      "id": "Y10",
+      "description": "Valor da Parcela",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "tPag": {
+      "tag": "tPag",
+      "id": "YA02",
+      "description": "Meio de pagamento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "xPag": {
+      "tag": "xPag",
+      "id": "YA02a",
+      "description": "Descrição do Meio de Pagamento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 60,
+      "type": "C"
+    },
+    "vPag": {
+      "tag": "vPag",
+      "id": "YA03",
+      "description": "Valor do Pagamento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "CNPJPag": {
+      "tag": "CNPJPag",
+      "id": "YA03c",
+      "description": "CNPJ transacional do pagamento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 14,
+      "type": "N"
+    },
+    "UFPag": {
+      "tag": "UFPag",
+      "id": "YA03d",
+      "description": "UF do CNPJ do estabelecimento onde o pagamento foi processado/transacionado/recebido",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "C"
+    },
+    "tpIntegra": {
+      "tag": "tpIntegra",
+      "id": "YA04a",
+      "description": "Tipo de Integração para pagamento",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "tBand": {
+      "tag": "tBand",
+      "id": "YA06",
+      "description": "Bandeira da operadora de cartão de crédito e/ou débito",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "cAut": {
+      "tag": "cAut",
+      "id": "YA07",
+      "description": "Número de autorização da operação com cartões, PIX, boletos e outros pagamentos eletrônicos",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 128,
+      "type": "C"
+    },
+    "CNPJReceb": {
+      "tag": "CNPJReceb",
+      "id": "YA07a",
+      "description": "CNPJ do beneficiário do pagamento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 14,
+      "type": "C"
+    },
+    "idTermPag": {
+      "tag": "idTermPag",
+      "id": "YA07b",
+      "description": "Identificador do terminal de pagamento",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 40,
+      "type": "C"
+    },
+    "vTroco": {
+      "tag": "vTroco",
+      "id": "YA09",
+      "description": "Valor do troco",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "idCadIntTran": {
+      "tag": "idCadIntTran",
+      "id": "YB03",
+      "description": "Identificador cadastrado no intermediador",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 60,
+      "type": "C"
+    },
+    "infAdFisco": {
+      "tag": "infAdFisco",
+      "id": "Z02",
+      "description": "Informações Adicionais de Interesse do Fisco",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "infCpl": {
+      "tag": "infCpl",
+      "id": "Z03",
+      "description": "Informações Complementares de interesse do Contribuinte",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "nProc": {
+      "tag": "nProc",
+      "id": "Z11",
+      "description": "Identificador do processo ou ato concessório",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "indProc": {
+      "tag": "indProc",
+      "id": "Z12",
+      "description": "Indicador da origem do processo",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "tpAto": {
+      "tag": "tpAto",
+      "id": "Z13",
+      "description": "Tipo do ato concessório",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "UFSaidaPais": {
+      "tag": "UFSaidaPais",
+      "id": "ZA02",
+      "description": "Sigla da UF de Embarque ou de transposição de fronteira",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "C"
+    },
+    "xLocExporta": {
+      "tag": "xLocExporta",
+      "id": "ZA03",
+      "description": "Descrição do Local de Embarque ou de transposição de fronteira",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xLocDespacho": {
+      "tag": "xLocDespacho",
+      "id": "ZA04",
+      "description": "Descrição do local de despacho",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xNEmp": {
+      "tag": "xNEmp",
+      "id": "ZB02",
+      "description": "Nota de Empenho",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "xCont": {
+      "tag": "xCont",
+      "id": "ZB04",
+      "description": "Contrato",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "safra": {
+      "tag": "safra",
+      "id": "ZC02",
+      "description": "Identificação da safra",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "ref": {
+      "tag": "ref",
+      "id": "ZC03",
+      "description": "Mês e ano de referência",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 7,
+      "type": "C"
+    },
+    "dia": {
+      "tag": "dia",
+      "id": "ZC05",
+      "description": "Dia",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "N"
+    },
+    "qtde": {
+      "tag": "qtde",
+      "id": "ZC06",
+      "description": "Quantidade",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1110,
+      "type": "N"
+    },
+    "qTotMes": {
+      "tag": "qTotMes",
+      "id": "ZC07",
+      "description": "Quantidade Total do Mês",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1110,
+      "type": "N"
+    },
+    "qTotAnt": {
+      "tag": "qTotAnt",
+      "id": "ZC08",
+      "description": "Quantidade Total Anterior",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1110,
+      "type": "N"
+    },
+    "qTotGer": {
+      "tag": "qTotGer",
+      "id": "ZC09",
+      "description": "Quantidade Total Geral",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1110,
+      "type": "N"
+    },
+    "xDed": {
+      "tag": "xDed",
+      "id": "ZC11",
+      "description": "Descrição da Dedução",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": null,
+      "type": "C"
+    },
+    "vDed": {
+      "tag": "vDed",
+      "id": "ZC12",
+      "description": "Valor da Dedução",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vFor": {
+      "tag": "vFor",
+      "id": "ZC13",
+      "description": "Valor dos Fornecimentos",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vTotDed": {
+      "tag": "vTotDed",
+      "id": "ZC14",
+      "description": "Valor Total da Dedução",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "vLiqFor": {
+      "tag": "vLiqFor",
+      "id": "ZC15",
+      "description": "Valor Líquido dos Fornecimentos",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 132,
+      "type": "N"
+    },
+    "xContato": {
+      "tag": "xContato",
+      "id": "ZD04",
+      "description": "Nome da pessoa a ser contatada",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 60,
+      "type": "C"
+    },
+    "idCSRT": {
+      "tag": "idCSRT",
+      "id": "ZD08",
+      "description": "Identificador do CSRT",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "N"
+    },
+    "hashCSRT": {
+      "tag": "hashCSRT",
+      "id": "ZD09",
+      "description": "Hash do CSRT",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 28,
+      "type": "C"
+    },
+    "xSolic": {
+      "tag": "xSolic",
+      "id": "ZE02",
+      "description": "Solicitação de pedido de emissão da NFF",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 5000,
+      "type": "C"
+    },
+    "nReceituario": {
+      "tag": "nReceituario",
+      "id": "ZF03",
+      "description": "Número da receita ou receituário do agrotóxico / defensivo agrícola.",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 20,
+      "type": "C"
+    },
+    "CPFRespTec": {
+      "tag": "CPFRespTec",
+      "id": "ZF03a",
+      "description": "CPF do Responsável Técnico pela emissão do receituário",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 11,
+      "type": "N"
+    },
+    "tpGuia": {
+      "tag": "tpGuia",
+      "id": "ZF05",
+      "description": "Tipo de Guia",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1,
+      "type": "N"
+    },
+    "UFGuia": {
+      "tag": "UFGuia",
+      "id": "ZF06",
+      "description": "UF de emissão",
+      "required": false,
+      "minOccurs": 0,
+      "maxOccurs": "1",
+      "maxLength": 2,
+      "type": "C"
+    },
+    "qrCode": {
+      "tag": "qrCode",
+      "id": "ZX02",
+      "description": "Texto com o QR-Code impresso no DANFE NFC-e.  Obs.: URLs, por UF, utilizadas para consulta QR Code acesse: http://nfce.encat.org/desenvolvedor/qrcode/",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 1000,
+      "type": "C"
+    },
+    "urlChave": {
+      "tag": "urlChave",
+      "id": "ZX03",
+      "description": "Texto com a URL de consulta por chave de acesso a ser impressa no DANFE NFC-e. Obs.: URLs, por UF, utilizadas para consulta por chave de acesso acesse:\r\n                http://nfce.encat.org/consumidor/consultenota/",
+      "required": true,
+      "minOccurs": 1,
+      "maxOccurs": "1",
+      "maxLength": 85,
+      "type": "C"
+    }
+  }
+}
