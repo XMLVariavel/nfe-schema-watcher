@@ -2,6 +2,7 @@ name: Watcher Schema NF-e
 
 on:
   schedule:
+    # Roda todos os dias às 10:00 UTC (07:00 Horário de Brasília)
     - cron: '0 10 * * *'
   workflow_dispatch:
     inputs:
@@ -9,6 +10,11 @@ on:
         description: 'Forcar envio mesmo sem mudancas'
         required: false
         default: 'false'
+
+# Evita que dois jobs tentem dar push ao mesmo tempo
+concurrency:
+  group: nfe-watcher-group
+  cancel-in-progress: false
 
 jobs:
   watch:
@@ -18,11 +24,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Busca todo o histórico para facilitar o rebase se necessário
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24' # Atualizado para 2026 conforme o log sugeriu
 
       - name: Instalar
         run: npm install
@@ -36,11 +45,18 @@ jobs:
           FORCE_REPORT: ${{ github.event.inputs.force_report || 'false' }}
         run: npx tsx scripts/watch-schema.ts
 
-      - name: Commit snapshot
+      - name: Commit e Push Automático
+        # Só roda se o seu script marcou que houve mudança
         if: steps.watch.outputs.schema_changed == 'true'
         run: |
           git config user.name "schema-watcher-bot"
           git config user.email "bot@noreply.github.com"
           git add data/
-          git commit -m "chore: snapshot atualizado"
-          git push
+          
+          # Só commita se houver de fato algo no 'git add'
+          git commit -m "chore: snapshot atualizado [skip ci]" || exit 0
+          
+          # Estratégia de guerra contra o erro de [rejected]
+          # Tenta puxar as mudanças remotas e colocar as suas em cima
+          git pull --rebase origin main
+          git push origin main
