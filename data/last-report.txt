@@ -1,5 +1,5 @@
 === WATCHER SCHEMA NF-e ===
-Data/hora:    09/04/2026, 09:11:26
+Data/hora:    10/04/2026, 09:06:04
 Campos total: 484
 
 --- ESQUEMAS XML (XSD) ---
