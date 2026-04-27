@@ -75,11 +75,32 @@ interface Diff {
   changedFields: Array<{ tag: string; before: Partial<FieldInfo>; after: Partial<FieldInfo> }>
 }
 
+// Decode HTML entities (SEFAZ serves "Técnica" as "&eacute;cnica")
+function decodeEntities(s: string): string {
+  return s
+    .replace(/&eacute;/gi, 'é').replace(/&Eacute;/g, 'É')
+    .replace(/&aacute;/gi, 'á').replace(/&Aacute;/g, 'Á')
+    .replace(/&atilde;/gi, 'ã').replace(/&Atilde;/g, 'Ã')
+    .replace(/&otilde;/gi, 'õ').replace(/&Otilde;/g, 'Õ')
+    .replace(/&ccedil;/gi, 'ç').replace(/&Ccedil;/g, 'Ç')
+    .replace(/&iacute;/gi, 'í').replace(/&oacute;/gi, 'ó')
+    .replace(/&uacute;/gi, 'ú').replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&nbsp;/gi, ' ')
+    .replace(/&#(\d+);/g, (_, n: string) => String.fromCharCode(parseInt(n)))
+}
+
 // HTTP helpers
+const REQUEST_HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (compatible; NFe-Schema-Watcher/1.0)',
+  'Accept': 'text/html,application/xhtml+xml,*/*;q=0.8',
+  'Accept-Language': 'pt-BR,pt;q=0.9',
+  'Accept-Encoding': 'gzip, deflate',
+}
+
 function fetchRaw(url: string, timeoutMs = 25000): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     const proto = url.startsWith('https') ? https : http
-    const req = proto.get(url, { timeout: timeoutMs }, (res) => {
+    const req = proto.get(url, { timeout: timeoutMs, headers: REQUEST_HEADERS }, (res) => {
       if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
         const loc = res.headers.location.startsWith('http')
           ? res.headers.location
@@ -89,7 +110,17 @@ function fetchRaw(url: string, timeoutMs = 25000): Promise<Buffer> {
       }
       const chunks: Buffer[] = []
       res.on('data', (c: Buffer) => chunks.push(c))
-      res.on('end', () => resolve(Buffer.concat(chunks)))
+      res.on('end', () => {
+        const raw = Buffer.concat(chunks)
+        const enc = res.headers['content-encoding']
+        if (enc === 'gzip') {
+          zlib.gunzip(raw, (err, result) => err ? reject(err) : resolve(result))
+        } else if (enc === 'deflate') {
+          zlib.inflate(raw, (err, result) => err ? reject(err) : resolve(result))
+        } else {
+          resolve(raw)
+        }
+      })
     })
     req.on('timeout', () => { req.destroy(); reject(new Error(`Timeout: ${url}`)) })
     req.on('error', reject)
@@ -123,7 +154,7 @@ function parseXsdPage(html: string): PublishedItem[] {
   let m: RegExpExecArray | null
   while ((m = linkRe.exec(html)) !== null) {
     const relUrl = m[1].replace(/&amp;/g, '&')
-    const title  = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+    const title  = decodeEntities(m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
     if (!title.match(/Esquema XML NF-e\/NFC-e|NF-e\/NFC-e.*Pacote/i)) continue
     if (title.match(/evento|NFGas|NFAg|cancelamento|carta.*corre|EPEC|GTIN|Averbaao|Suframa|distribuio/i)) continue
     const dateM  = title.match(/Publicado em\s+([\d/]+)/i)
@@ -147,13 +178,16 @@ function parseNtPage(html: string): PublishedItem[] {
   let m: RegExpExecArray | null
   while ((m = linkRe.exec(html)) !== null) {
     const relUrl = m[1].replace(/&amp;/g, '&')
-    const title  = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+    // BUGFIX: SEFAZ renderiza "Técnica" como "&eacute;cnica" — decodificar antes do regex
+    const title  = decodeEntities(m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
     if (!title.match(/Nota T[eé]cnica/i)) continue
-    const ntM   = title.match(/Nota T[eé]cnica\s+([\d.]+)\s+v\.([\d.]+[a-z]?)/i)
-    const dateM = title.match(/Publicada em\s+([\d/]+)/i)
-    if (!ntM || !dateM) continue
+    // Aceita: "NT 2020.001 v.1.60", "NT 2014.002 - v.1.30", "NT 2025.001. v.1.03 - Corrigido"
+    const ntM   = title.match(/Nota T[eé]cnica(?:\s+Conjunta)?\s+([\d.]+?)\.?\s+(?:-\s+)?v\.([\d.]+[a-z]?)/i)
+    const dateM = title.match(/Publicad[ao] em\s+([\d/]+)/i)
+    if (!dateM) continue
+    // NT Conjunta nao tem versao padrao — aceita sem ntM
     items.push({ title, url: `${BASE_URL}/${relUrl}`, date: dateM[1],
-                 ntRef: ntM[1], version: ntM[2] })
+                 ntRef: ntM?.[1] ?? 'conjunta', version: ntM?.[2] ?? '1.00' })
   }
   return items
 }
@@ -245,7 +279,8 @@ function diffSnapshots(prev: Snapshot | null, curr: Snapshot): Diff {
   const isFirst = !prev
   const prevNtKeys = new Set((prev?.latestNts ?? []).map(n => `${n.ntRef}v${n.version}`))
   const newNts = curr.latestNts.filter(n => !prevNtKeys.has(`${n.ntRef}v${n.version}`))
-  const xsdChanged = !prev?.latestXsd || prev.latestXsd.url !== curr.latestXsd?.url
+  // Só considera mudança de XSD se realmente encontramos um XSD novo e diferente do anterior
+  const xsdChanged = !!curr.latestXsd && (prev?.latestXsd?.url !== curr.latestXsd?.url)
   if (isFirst) return { xsdChanged: true, newXsd: curr.latestXsd, newNts: curr.latestNts,
                         addedFields: Object.values(curr.fields), removedFields: [], changedFields: [] }
   const addedFields: FieldInfo[] = []
@@ -357,7 +392,8 @@ async function main() {
   console.log(`NTs vigentes: ${latestNts.length}`)
   if (latestNts[0]) console.log(`Mais recente: ${latestNts[0].title}`)
 
-  const xsdChanged = !previous?.latestXsd || previous.latestXsd.url !== latestXsd?.url
+  // Só considera XSD mudado se encontramos um XSD e a URL é diferente do anterior
+  const xsdChanged = !!latestXsd && (previous?.latestXsd?.url !== latestXsd?.url)
   let fields: Record<string, FieldInfo> = previous?.fields ?? {}
 
   if (xsdChanged && latestXsd) {
