@@ -36,6 +36,34 @@ jobs:
       - name: Instalar
         run: npm install
 
+      - name: Buscar HTML da SEFAZ via curl
+        run: |
+          mkdir -p data
+          # curl lida nativamente com cookies ASP.NET (Set-Cookie no redirect)
+          # -c grava cookies recebidos, -b reenvia na próxima requisição
+          curl -s -L \
+            -c /tmp/sefaz-cookies.txt \
+            -b /tmp/sefaz-cookies.txt \
+            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+            -H "Accept: text/html,application/xhtml+xml,*/*;q=0.8" \
+            -H "Accept-Language: pt-BR,pt;q=0.9" \
+            --retry 3 --retry-delay 5 \
+            "https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=" \
+            -o data/nt-page.html
+          echo "NT page size: $(wc -c < data/nt-page.html) bytes"
+          grep -c "exibirArquivo" data/nt-page.html && echo "Links encontrados" || echo "Nenhum link encontrado"
+
+          curl -s -L \
+            -c /tmp/sefaz-cookies.txt \
+            -b /tmp/sefaz-cookies.txt \
+            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+            -H "Accept: text/html,application/xhtml+xml,*/*;q=0.8" \
+            -H "Accept-Language: pt-BR,pt;q=0.9" \
+            --retry 3 --retry-delay 5 \
+            "https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=BMPFMBoln3w=" \
+            -o data/xsd-page.html
+          echo "XSD page size: $(wc -c < data/xsd-page.html) bytes"
+
       - name: Executar
         id: watch
         env:
@@ -43,6 +71,8 @@ jobs:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
           FORCE_REPORT: ${{ github.event.inputs.force_report || 'false' }}
+          NT_HTML_FILE: data/nt-page.html
+          XSD_HTML_FILE: data/xsd-page.html
         run: npx tsx scripts/watch-schema.ts
 
       - name: Commit e Push Automático
