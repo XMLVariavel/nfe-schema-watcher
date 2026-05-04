@@ -27,7 +27,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT          = path.resolve(__dirname, '..')
 const SNAPSHOT_PATH = path.join(ROOT, 'data', 'snapshot.json')
 const REPORT_PATH   = path.join(ROOT, 'data', 'last-report.txt')
-const ALERTS_PATH   = path.join(ROOT, 'data', 'alerts.json')
 
 const BASE_URL = 'https://www.nfe.fazenda.gov.br/portal'
 
@@ -76,72 +75,21 @@ interface Diff {
   changedFields: Array<{ tag: string; before: Partial<FieldInfo>; after: Partial<FieldInfo> }>
 }
 
-// Decode HTML entities (SEFAZ serves "Técnica" como "&eacute;cnica")
-function decodeEntities(s: string): string {
-  return s
-    .replace(/&eacute;/gi, 'é').replace(/&Eacute;/g, 'É')
-    .replace(/&aacute;/gi, 'á').replace(/&Aacute;/g, 'Á')
-    .replace(/&atilde;/gi, 'ã').replace(/&Atilde;/g, 'Ã')
-    .replace(/&otilde;/gi, 'õ').replace(/&ccedil;/gi, 'ç')
-    .replace(/&iacute;/gi, 'í').replace(/&oacute;/gi, 'ó')
-    .replace(/&uacute;/gi, 'ú').replace(/&amp;/gi, '&')
-    .replace(/&nbsp;/gi, ' ').replace(/&#(\d+);/g, (_, n: string) => String.fromCharCode(parseInt(n)))
-}
-
-const BROWSER_HEADERS = {
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-  'Accept-Language': 'pt-BR,pt;q=0.9,en;q=0.7',
-  'Accept-Encoding': 'gzip, deflate',
-  'Connection': 'keep-alive',
-}
-
 // HTTP helpers
-// BUGFIX: O portal SEFAZ é ASP.NET e faz um redirect de detecção de cookie:
-//   GET /listaConteudo.aspx?tipoConteudo=xxx
-//   → 302 + Set-Cookie: ASP.NET_SessionId=yyy
-//   → GET /listaConteudo.aspx?AspxAutoDetectCookieSupport=1&tipoConteudo=xxx
-// Sem repassar o cookie no redirect, o servidor devolve a home/estatísticas em vez da lista de NTs.
-function fetchRaw(url: string, timeoutMs = 25000, cookies: string[] = [], depth = 0): Promise<Buffer> {
-  if (depth > 5) return Promise.reject(new Error('Too many redirects'))
+function fetchRaw(url: string, timeoutMs = 25000): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     const proto = url.startsWith('https') ? https : http
-    const headers: Record<string, string> = { ...BROWSER_HEADERS }
-    if (cookies.length > 0) headers['Cookie'] = cookies.join('; ')
-
-    const req = proto.get(url, { timeout: timeoutMs, headers }, (res) => {
-      // Coletar cookies do Set-Cookie da resposta
-      const setCookie = res.headers['set-cookie'] ?? []
-      const newCookies = [...cookies]
-      setCookie.forEach(c => {
-        const pair = c.split(';')[0] // "Name=Value"
-        if (pair && !newCookies.some(existing => existing.startsWith(pair.split('=')[0] + '='))) {
-          newCookies.push(pair)
-        }
-      })
-
+    const req = proto.get(url, { timeout: timeoutMs }, (res) => {
       if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        const rawLoc = res.headers.location
-        const loc = rawLoc.startsWith('http') ? rawLoc : `${BASE_URL}${rawLoc.startsWith('/') ? '' : '/'}${rawLoc}`
-        // Consumir o body antes de seguir o redirect (evita socket hang)
-        res.resume()
-        fetchRaw(loc, timeoutMs, newCookies, depth + 1).then(resolve, reject)
+        const loc = res.headers.location.startsWith('http')
+          ? res.headers.location
+          : `${BASE_URL}/${res.headers.location}`
+        fetchRaw(loc, timeoutMs).then(resolve, reject)
         return
       }
-
       const chunks: Buffer[] = []
       res.on('data', (c: Buffer) => chunks.push(c))
-      res.on('end', () => {
-        const raw = Buffer.concat(chunks)
-        const enc = res.headers['content-encoding']
-        if (enc === 'gzip') {
-          zlib.gunzip(raw, (err, result) => err ? reject(err) : resolve(result))
-        } else if (enc === 'deflate') {
-          zlib.inflate(raw, (err, result) => err ? reject(err) : resolve(result))
-        } else {
-          resolve(raw)
-        }
-      })
+      res.on('end', () => resolve(Buffer.concat(chunks)))
     })
     req.on('timeout', () => { req.destroy(); reject(new Error(`Timeout: ${url}`)) })
     req.on('error', reject)
@@ -175,7 +123,7 @@ function parseXsdPage(html: string): PublishedItem[] {
   let m: RegExpExecArray | null
   while ((m = linkRe.exec(html)) !== null) {
     const relUrl = m[1].replace(/&amp;/g, '&')
-    const title  = decodeEntities(m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
+    const title  = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
     if (!title.match(/Esquema XML NF-e\/NFC-e|NF-e\/NFC-e.*Pacote/i)) continue
     if (title.match(/evento|NFGas|NFAg|cancelamento|carta.*corre|EPEC|GTIN|Averbaao|Suframa|distribuio/i)) continue
     const dateM  = title.match(/Publicado em\s+([\d/]+)/i)
@@ -199,16 +147,13 @@ function parseNtPage(html: string): PublishedItem[] {
   let m: RegExpExecArray | null
   while ((m = linkRe.exec(html)) !== null) {
     const relUrl = m[1].replace(/&amp;/g, '&')
-    // BUGFIX: SEFAZ renderiza "Técnica" como "&eacute;cnica" — decodificar antes dos regex
-    const title  = decodeEntities(m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
+    const title  = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
     if (!title.match(/Nota T[eé]cnica/i)) continue
-    // Cobre variantes reais: "NT 2020.001 v.1.60", "NT 2014.002 - v.1.30",
-    // "NT 2025.001. v.1.03 - Corrigido", "NT Conjunta 2025.001", "NT 2026.004 v.1.00"
-    const ntM   = title.match(/Nota T[eé]cnica(?:\s+Conjunta)?\s+([\d.]+?)\.?\s+(?:-\s+)?v\.([\d.]+[a-z]?)/i)
-    const dateM = title.match(/Publicad[ao] em\s+([\d/]+)/i)
-    if (!dateM) continue
+    const ntM   = title.match(/Nota T[eé]cnica\s+([\d.]+)\s+v\.([\d.]+[a-z]?)/i)
+    const dateM = title.match(/Publicada em\s+([\d/]+)/i)
+    if (!ntM || !dateM) continue
     items.push({ title, url: `${BASE_URL}/${relUrl}`, date: dateM[1],
-                 ntRef: ntM?.[1] ?? 'conjunta', version: ntM?.[2] ?? '1.00' })
+                 ntRef: ntM[1], version: ntM[2] })
   }
   return items
 }
@@ -293,37 +238,6 @@ function loadSnapshot(): Snapshot | null {
 function saveSnapshot(s: Snapshot) {
   fs.mkdirSync(path.dirname(SNAPSHOT_PATH), { recursive: true })
   fs.writeFileSync(SNAPSHOT_PATH, JSON.stringify(s, null, 2))
-}
-
-// Gera data/alerts.json consumido pelo NotificationPanel.tsx do editor
-// Formato: { latestSchema, nts[], lastUpdate }
-function saveAlerts(curr: Snapshot, diff: Diff, isFirst: boolean) {
-  const nts = curr.latestNts.slice(0, 10).map((nt, i) => ({
-    number: nt.ntRef,
-    version: `v.${nt.version}`,
-    description: nt.title.replace(/^Nota T[eé]cnica[^-]*-\s*/i, '').split('-')[0].trim(),
-    date: nt.date,
-    url: nt.url,
-    isNew: !isFirst && diff.newNts.some(n => n.ntRef === nt.ntRef && n.version === nt.version),
-  }))
-
-  const alerts = {
-    latestSchema: curr.latestXsd ? {
-      version: curr.latestXsd.pacote ?? curr.latestXsd.ntRef ?? '',
-      description: curr.latestXsd.title,
-      date: curr.latestXsd.date,
-      url: curr.latestXsd.url,
-      isNew: !isFirst && diff.xsdChanged,
-    } : null,
-    nts,
-    fieldCount: curr.fieldCount,
-    lastUpdate: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
-    generatedAt: new Date().toISOString(),
-  }
-
-  fs.mkdirSync(path.dirname(ALERTS_PATH), { recursive: true })
-  fs.writeFileSync(ALERTS_PATH, JSON.stringify(alerts, null, 2))
-  console.log(`alerts.json salvo: ${nts.length} NTs, schema: ${alerts.latestSchema?.version ?? 'nao detectado'}`)
 }
 
 // Diff
@@ -430,22 +344,31 @@ async function main() {
   const isFirst  = !previous
   if (previous) console.log(`Snapshot anterior: ${previous.capturedAt}`)
 
+  // Lê HTML de arquivo pré-baixado pelo curl no workflow (mais confiável para ASP.NET + cookies)
+  // ou faz o fetch direto quando rodando localmente
+  function readOrFetch(envVar: string, url: string): Promise<string | null> {
+    const file = process.env[envVar]
+    if (file && fs.existsSync(file)) {
+      console.log(`  Lendo de ${file}`)
+      return Promise.resolve(fs.readFileSync(file, 'utf-8'))
+    }
+    return fetchText(url)
+  }
+
   console.log('\nEsquemas XML...')
-  const xsdHtml  = await fetchText(URLS.xsd)
+  const xsdHtml  = await readOrFetch('XSD_HTML_FILE', URLS.xsd)
   const xsdItems = xsdHtml ? parseXsdPage(xsdHtml) : []
   const latestXsd = xsdItems[0] ?? null
   console.log(`Pacotes encontrados: ${xsdItems.length}`)
   if (latestXsd) console.log(`Mais recente: ${latestXsd.title}`)
 
   console.log('\nNotas Tecnicas...')
-  const ntHtml    = await fetchText(URLS.nt)
-  console.log('NT HTML preview:', ntHtml?.slice(0, 800) ?? 'NULL')  
+  const ntHtml    = await readOrFetch('NT_HTML_FILE', URLS.nt)
   const latestNts = ntHtml ? parseNtPage(ntHtml) : []
   console.log(`NTs vigentes: ${latestNts.length}`)
   if (latestNts[0]) console.log(`Mais recente: ${latestNts[0].title}`)
 
-  // Só considera XSD mudado se realmente encontramos um XSD com URL diferente
-  const xsdChanged = !!latestXsd && (previous?.latestXsd?.url !== latestXsd.url)
+  const xsdChanged = !previous?.latestXsd || previous.latestXsd.url !== latestXsd?.url
   let fields: Record<string, FieldInfo> = previous?.fields ?? {}
 
   if (xsdChanged && latestXsd) {
@@ -469,8 +392,6 @@ async function main() {
   console.log('\n' + textReport)
 
   saveSnapshot(current)
-  // BUGFIX: gerar alerts.json para o NotificationPanel do editor XML
-  saveAlerts(current, diff, isFirst)
 
   const forceReport = process.env.FORCE_REPORT === 'true'
   if (hasChanges || isFirst || forceReport) {
