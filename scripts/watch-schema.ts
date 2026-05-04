@@ -439,6 +439,7 @@ async function main() {
 
   console.log('\nNotas Tecnicas...')
   const ntHtml    = await fetchText(URLS.nt)
+  console.log('NT HTML preview:', ntHtml?.slice(0, 800) ?? 'NULL')  
   const latestNts = ntHtml ? parseNtPage(ntHtml) : []
   console.log(`NTs vigentes: ${latestNts.length}`)
   if (latestNts[0]) console.log(`Mais recente: ${latestNts[0].title}`)
