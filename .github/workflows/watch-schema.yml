@@ -63,6 +63,16 @@ jobs:
             "https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=BMPFMBoln3w=" \
             -o data/xsd-page.html
           echo "XSD page size: $(wc -c < data/xsd-page.html) bytes"
+    
+      - name: Debug HTML
+        run: |
+          echo "=== Tamanho dos arquivos ==="
+          wc -c data/nt-page.html data/xsd-page.html
+          echo "=== Links exibirArquivo no NT ==="
+          grep -i "exibirArquivo" data/nt-page.html | head -10 || echo "NENHUM LINK ENCONTRADO"
+          echo "=== Primeiros 500 chars do NT ==="
+          head -c 500 data/nt-page.html
+          
 
       - name: Executar
         id: watch
