@@ -27,12 +27,25 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT          = path.resolve(__dirname, '..')
 const SNAPSHOT_PATH = path.join(ROOT, 'data', 'snapshot.json')
 const REPORT_PATH   = path.join(ROOT, 'data', 'last-report.txt')
+const ALERTS_PATH   = path.join(ROOT, 'data', 'alerts.json')
 
 const BASE_URL = 'https://www.nfe.fazenda.gov.br/portal'
 
 const URLS = {
   xsd: `${BASE_URL}/listaConteudo.aspx?tipoConteudo=BMPFMBoln3w=`,
   nt:  `${BASE_URL}/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=`,
+}
+
+// Decodifica entidades HTML — SEFAZ usa &#xD;&#xA; nos hrefs e &eacute; nos títulos
+function decodeEntities(s: string): string {
+  return s
+    .replace(/&#xD;/gi, '').replace(/&#xA;/gi, '')
+    .replace(/&eacute;/gi, 'é').replace(/&Eacute;/g, 'É')
+    .replace(/&aacute;/gi, 'á').replace(/&atilde;/gi, 'ã')
+    .replace(/&otilde;/gi, 'õ').replace(/&ccedil;/gi, 'ç')
+    .replace(/&iacute;/gi, 'í').replace(/&oacute;/gi, 'ó')
+    .replace(/&uacute;/gi, 'ú').replace(/&amp;/gi, '&')
+    .replace(/&nbsp;/gi, ' ').replace(/&#(\d+);/g, (_, n: string) => String.fromCharCode(parseInt(n)))
 }
 
 // Interfaces
@@ -119,11 +132,14 @@ async function fetchBinary(url: string): Promise<Buffer | null> {
 // Parser pagina Esquemas XML
 function parseXsdPage(html: string): PublishedItem[] {
   const items: PublishedItem[] = []
-  const linkRe = /href="(exibirArquivo\.aspx\?conteudo=[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi
+  // href real: href="&#xD;&#xA;                exibirArquivo.aspx?conteudo=xxx"
+  const linkRe = /href="[^"]*?(exibirArquivo\.aspx\?conteudo=[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi
   let m: RegExpExecArray | null
   while ((m = linkRe.exec(html)) !== null) {
-    const relUrl = m[1].replace(/&amp;/g, '&')
-    const title  = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+    const relUrl = decodeEntities(m[1]).trim()
+    const inner  = m[2]
+    const spanM  = inner.match(/<span[^>]*tituloConteudo[^>]*>([\s\S]*?)<\/span>/i)
+    const title  = decodeEntities((spanM ? spanM[1] : inner).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
     if (!title.match(/Esquema XML NF-e\/NFC-e|NF-e\/NFC-e.*Pacote/i)) continue
     if (title.match(/evento|NFGas|NFAg|cancelamento|carta.*corre|EPEC|GTIN|Averbaao|Suframa|distribuio/i)) continue
     const dateM  = title.match(/Publicado em\s+([\d/]+)/i)
@@ -143,17 +159,22 @@ function parseXsdPage(html: string): PublishedItem[] {
 // Parser pagina Notas Tecnicas
 function parseNtPage(html: string): PublishedItem[] {
   const items: PublishedItem[] = []
-  const linkRe = /href="(exibirArquivo\.aspx\?conteudo=[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi
+  // href real: href="&#xD;&#xA;                exibirArquivo.aspx?conteudo=xxx"
+  const linkRe = /href="[^"]*?(exibirArquivo\.aspx\?conteudo=[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi
   let m: RegExpExecArray | null
   while ((m = linkRe.exec(html)) !== null) {
-    const relUrl = m[1].replace(/&amp;/g, '&')
-    const title  = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+    const relUrl = decodeEntities(m[1]).trim()
+    const inner  = m[2]
+    // Título fica dentro de <span class="tituloConteudo">
+    const spanM  = inner.match(/<span[^>]*tituloConteudo[^>]*>([\s\S]*?)<\/span>/i)
+    const title  = decodeEntities((spanM ? spanM[1] : inner).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
     if (!title.match(/Nota T[eé]cnica/i)) continue
-    const ntM   = title.match(/Nota T[eé]cnica\s+([\d.]+)\s+v\.([\d.]+[a-z]?)/i)
-    const dateM = title.match(/Publicada em\s+([\d/]+)/i)
-    if (!ntM || !dateM) continue
+    // Cobre variantes: '2026.004 v.1.00', '2025.002.v.1.20', '2016.003 - v.3.62', 'Conjunta'
+    const ntM   = title.match(/Nota T[eé]cnica(?:\s+Conjunta)?\s+([\d.]+?)\.?\s+(?:-\s+)?v\.?\s*([\d.]+[a-z]?)/i)
+    const dateM = title.match(/Publicad[ao] em\s+([\d/]+)/i)
+    if (!dateM) continue
     items.push({ title, url: `${BASE_URL}/${relUrl}`, date: dateM[1],
-                 ntRef: ntM[1], version: ntM[2] })
+                 ntRef: ntM?.[1] ?? 'conjunta', version: ntM?.[2] ?? '1.00' })
   }
   return items
 }
@@ -337,6 +358,39 @@ function setOutput(name: string, value: string) {
   if (f) fs.appendFileSync(f, `${name}=${value}\n`)
 }
 
+function saveSnapshot(s: Snapshot) {
+  fs.mkdirSync(path.dirname(SNAPSHOT_PATH), { recursive: true })
+  fs.writeFileSync(SNAPSHOT_PATH, JSON.stringify(s, null, 2))
+}
+
+// Gera data/alerts.json consumido pelo NotificationPanel.tsx do editor
+function saveAlerts(curr: Snapshot, diff: Diff, isFirst: boolean) {
+  const nts = curr.latestNts.slice(0, 10).map(nt => ({
+    number:      nt.ntRef,
+    version:     `v.${nt.version}`,
+    description: nt.title.replace(/^Nota T[eé]cnica[^-–]*[-–]\s*/i, '').trim(),
+    date:        nt.date,
+    url:         nt.url,
+    isNew:       !isFirst && diff.newNts.some(n => n.ntRef === nt.ntRef && n.version === nt.version),
+  }))
+  const alerts = {
+    latestSchema: curr.latestXsd ? {
+      version:     curr.latestXsd.pacote ?? curr.latestXsd.ntRef ?? '',
+      description: curr.latestXsd.title,
+      date:        curr.latestXsd.date,
+      url:         curr.latestXsd.url,
+      isNew:       !isFirst && diff.xsdChanged,
+    } : null,
+    nts,
+    fieldCount:  curr.fieldCount,
+    lastUpdate:  new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
+    generatedAt: new Date().toISOString(),
+  }
+  fs.mkdirSync(path.dirname(ALERTS_PATH), { recursive: true })
+  fs.writeFileSync(ALERTS_PATH, JSON.stringify(alerts, null, 2))
+  console.log(`alerts.json salvo: ${nts.length} NTs, schema: ${alerts.latestSchema?.version ?? 'nao detectado'}`)
+}
+
 // Main
 async function main() {
   console.log('Watcher Schema NF-e — ' + new Date().toISOString())
@@ -344,8 +398,8 @@ async function main() {
   const isFirst  = !previous
   if (previous) console.log(`Snapshot anterior: ${previous.capturedAt}`)
 
-  // Lê HTML de arquivo pré-baixado pelo curl no workflow (mais confiável para ASP.NET + cookies)
-  // ou faz o fetch direto quando rodando localmente
+  // Lê HTML de arquivo pré-baixado pelo curl no workflow (lida melhor com cookies ASP.NET)
+  // ou faz fetch direto quando rodando localmente
   function readOrFetch(envVar: string, url: string): Promise<string | null> {
     const file = process.env[envVar]
     if (file && fs.existsSync(file)) {
@@ -368,7 +422,8 @@ async function main() {
   console.log(`NTs vigentes: ${latestNts.length}`)
   if (latestNts[0]) console.log(`Mais recente: ${latestNts[0].title}`)
 
-  const xsdChanged = !previous?.latestXsd || previous.latestXsd.url !== latestXsd?.url
+  // Só considera XSD mudado se realmente encontramos um XSD com URL diferente
+  const xsdChanged = !!latestXsd && (previous?.latestXsd?.url !== latestXsd.url)
   let fields: Record<string, FieldInfo> = previous?.fields ?? {}
 
   if (xsdChanged && latestXsd) {
@@ -392,6 +447,7 @@ async function main() {
   console.log('\n' + textReport)
 
   saveSnapshot(current)
+  saveAlerts(current, diff, isFirst)
 
   const forceReport = process.env.FORCE_REPORT === 'true'
   if (hasChanges || isFirst || forceReport) {
@@ -402,7 +458,7 @@ async function main() {
       : hasNewNt && hasNewF
         ? `[NF-e Watcher] NT nova + ${diff.addedFields.length} campo(s) — ${diff.newNts.map(n=>`NT ${n.ntRef} v.${n.version}`).join(', ')}`
         : hasNewNt
-          ? `[NF-e Watcher] Nova NT — ${diff.newNts.map(n=>`NT ${n.ntRef} v.${n.version}`).join(', ')}`
+          ? `[NF-e Watcher] 🔴 Nova NT — ${diff.newNts.map(n=>`NT ${n.ntRef} v.${n.version}`).join(', ')}`
           : hasNewF
             ? `[NF-e Watcher] ${diff.addedFields.length} campo(s) novo(s) nos XSDs`
             : `[NF-e Watcher] Mudanca no schema`
