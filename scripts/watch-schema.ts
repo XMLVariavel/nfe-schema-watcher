@@ -256,11 +256,6 @@ function loadSnapshot(): Snapshot | null {
   try { if (fs.existsSync(SNAPSHOT_PATH)) return JSON.parse(fs.readFileSync(SNAPSHOT_PATH,'utf-8')) } catch {}
   return null
 }
-function saveSnapshot(s: Snapshot) {
-  fs.mkdirSync(path.dirname(SNAPSHOT_PATH), { recursive: true })
-  fs.writeFileSync(SNAPSHOT_PATH, JSON.stringify(s, null, 2))
-}
-
 // Diff
 function diffSnapshots(prev: Snapshot | null, curr: Snapshot): Diff {
   const isFirst = !prev
