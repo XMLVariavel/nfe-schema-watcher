@@ -8,6 +8,13 @@
   },
   "latestNts": [
     {
+      "title": "Nota Técnica 2024.003 v.1.10 - Publicada em 11/05/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=iamjHzm 4/I=",
+      "date": "11/05/2026",
+      "ntRef": "2024.003",
+      "version": "1.10"
+    },
+    {
       "title": "Nota Técnica 2026.004 v.1.00 - Publicada em 30/04/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2/TP/AP Pb4=",
       "date": "30/04/2026",
@@ -41,13 +48,6 @@
       "date": "26/03/2026",
       "ntRef": "2022.002",
       "version": "1.30a"
-    },
-    {
-      "title": "Nota Técnica 2024.003 v.1.09 - Publicada em 11/03/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo= cVstk1aziE=",
-      "date": "11/03/2026",
-      "ntRef": "2024.003",
-      "version": "1.09"
     },
     {
       "title": "Nota Técnica 2014.002 - v.1.30 - Publicada em 09/02/2026",
@@ -713,6 +713,13 @@
       "date": "31/03/2026",
       "ntRef": "2025.002",
       "version": "1.35"
+    },
+    {
+      "title": "Nota Técnica 2024.003 v.1.09 - Publicada em 11/03/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo= cVstk1aziE=",
+      "date": "11/03/2026",
+      "ntRef": "2024.003",
+      "version": "1.09"
     },
     {
       "title": "Nota Técnica 2022.002 v.1.30 - Publicada em 02/03/2026",
@@ -6909,5 +6916,5 @@
       "type": "C"
     }
   },
-  "capturedAt": "2026-05-05T13:19:16.428Z"
+  "capturedAt": "2026-05-12T11:55:35.639Z"
 }
