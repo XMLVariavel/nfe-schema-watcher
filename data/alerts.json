@@ -8,12 +8,28 @@
   },
   "nts": [
     {
+      "number": "2026.003",
+      "version": "v.1.00",
+      "description": "Publicada em 25/05/2026",
+      "date": "25/05/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2YdaBTIql k=",
+      "isNew": true
+    },
+    {
+      "number": "2026.002",
+      "version": "v.1.00",
+      "description": "Publicada em 25/05/2026",
+      "date": "25/05/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=3v7VFvaogiA=",
+      "isNew": true
+    },
+    {
       "number": "2025.002",
       "version": "v.1.40",
       "description": "Publicada em 20/05/2026",
       "date": "20/05/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=lWEyoabukyw=",
-      "isNew": true
+      "isNew": false
     },
     {
       "number": "2024.003",
@@ -70,25 +86,9 @@
       "date": "18/11/2025",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=T3QyeMfpios=",
       "isNew": false
-    },
-    {
-      "number": "2025.001",
-      "version": "v.1.03",
-      "description": "Corrigido - Publicada em 29/09/2025",
-      "date": "29/09/2025",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=NvuzQGYd6E8=",
-      "isNew": false
-    },
-    {
-      "number": "conjunta",
-      "version": "v.1.00",
-      "description": "Publicada em 18/08/2025",
-      "date": "18/08/2025",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=suszdTDFNOk=",
-      "isNew": false
     }
   ],
   "fieldCount": 484,
-  "lastUpdate": "21/05/2026, 09:44:10",
-  "generatedAt": "2026-05-21T12:44:10.740Z"
+  "lastUpdate": "27/05/2026, 09:52:13",
+  "generatedAt": "2026-05-27T12:52:13.236Z"
 }
