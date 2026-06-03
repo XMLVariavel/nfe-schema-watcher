@@ -1,17 +1,14 @@
 === WATCHER SCHEMA NF-e ===
-Data/hora:    27/05/2026, 09:52:13
+Data/hora:    03/06/2026, 11:28:33
 Campos total: 484
 
 --- ESQUEMAS XML (XSD) ---
-  Esquema XML NF-e/NFC-e - Pacote de Liberação nº 010c (NT 2022.002 v.1.30) (ZIP) - (Publicado em 26/03/2026)
-  https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo= ZqiLFb5FGE=
+  nao detectado
+  
+  *** NOVO PACOTE DETECTADO ***
 
 --- NOTAS TECNICAS ---
-  *** 2 NOVA(S) NT(s): ***
-  NT 2026.003 v.1.00 - 25/05/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2YdaBTIql k=
-  NT 2026.002 v.1.00 - 25/05/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=3v7VFvaogiA=
+  Ultima: nao detectada
 
 Esquemas XML: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=BMPFMBoln3w=
 Notas Tecnicas: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=
