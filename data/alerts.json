@@ -1,7 +1,94 @@
 {
-  "latestSchema": null,
-  "nts": [],
+  "latestSchema": {
+    "version": "2022.002",
+    "description": "Esquema XML NF-e/NFC-e - Pacote de Liberação nº 010c (NT 2022.002 v.1.30) (ZIP) - (Publicado em 26/03/2026)",
+    "date": "26/03/2026",
+    "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo= ZqiLFb5FGE=",
+    "isNew": true
+  },
+  "nts": [
+    {
+      "number": "2025.002",
+      "version": "v.1.50",
+      "description": "Publicada em 03/06/2026",
+      "date": "03/06/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=pD4YrecPV6s=",
+      "isNew": true
+    },
+    {
+      "number": "2026.003",
+      "version": "v.1.00",
+      "description": "Publicada em 25/05/2026",
+      "date": "25/05/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2YdaBTIql k=",
+      "isNew": true
+    },
+    {
+      "number": "2026.002",
+      "version": "v.1.00",
+      "description": "Publicada em 25/05/2026",
+      "date": "25/05/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=3v7VFvaogiA=",
+      "isNew": true
+    },
+    {
+      "number": "2025.002",
+      "version": "v.1.40",
+      "description": "Publicada em 20/05/2026",
+      "date": "20/05/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=lWEyoabukyw=",
+      "isNew": true
+    },
+    {
+      "number": "2024.003",
+      "version": "v.1.10",
+      "description": "Publicada em 11/05/2026",
+      "date": "11/05/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=iamjHzm 4/I=",
+      "isNew": true
+    },
+    {
+      "number": "2026.004",
+      "version": "v.1.00",
+      "description": "Publicada em 30/04/2026",
+      "date": "30/04/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2/TP/AP Pb4=",
+      "isNew": true
+    },
+    {
+      "number": "2020.001",
+      "version": "v.1.60",
+      "description": "Publicada em 23/04/2026",
+      "date": "23/04/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo= WTd7iuD21s=",
+      "isNew": true
+    },
+    {
+      "number": "2026.001",
+      "version": "v.1.00",
+      "description": "Publicada em 22/04/2026",
+      "date": "22/04/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=52e8psumXNc=",
+      "isNew": true
+    },
+    {
+      "number": "2022.002",
+      "version": "v.1.30a",
+      "description": "Publicada em 26/03/2026",
+      "date": "26/03/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=NpWPjigODyU=",
+      "isNew": true
+    },
+    {
+      "number": "2014.002",
+      "version": "v.1.30",
+      "description": "v.1.30 - Publicada em 09/02/2026",
+      "date": "09/02/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=P0U3lU1Fe40=",
+      "isNew": true
+    }
+  ],
   "fieldCount": 484,
-  "lastUpdate": "03/06/2026, 11:28:33",
-  "generatedAt": "2026-06-03T14:28:33.975Z"
+  "lastUpdate": "04/06/2026, 09:44:28",
+  "generatedAt": "2026-06-04T12:44:28.975Z"
 }
