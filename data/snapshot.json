@@ -8,6 +8,13 @@
   },
   "latestNts": [
     {
+      "title": "Nota Técnica 2026.001 v.1.02a - Publicada em 23/06/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=17/3gkpGzPY=",
+      "date": "23/06/2026",
+      "ntRef": "2026.001",
+      "version": "1.02a"
+    },
+    {
       "title": "Nota Técnica 2026.004 v.1.01 - Publicada em 08/06/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=BTZQzgsO9Ws=",
       "date": "08/06/2026",
@@ -62,13 +69,6 @@
       "date": "23/04/2026",
       "ntRef": "2020.001",
       "version": "1.60"
-    },
-    {
-      "title": "Nota Técnica 2026.001 v.1.00 - Publicada em 22/04/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=52e8psumXNc=",
-      "date": "22/04/2026",
-      "ntRef": "2026.001",
-      "version": "1.00"
     },
     {
       "title": "Nota Técnica 2022.002 v.1.30a - Publicada em 26/03/2026",
@@ -740,6 +740,13 @@
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2/TP/AP Pb4=",
       "date": "30/04/2026",
       "ntRef": "2026.004",
+      "version": "1.00"
+    },
+    {
+      "title": "Nota Técnica 2026.001 v.1.00 - Publicada em 22/04/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=52e8psumXNc=",
+      "date": "22/04/2026",
+      "ntRef": "2026.001",
       "version": "1.00"
     },
     {
@@ -6951,5 +6958,5 @@
       "type": "C"
     }
   },
-  "capturedAt": "2026-06-22T15:23:41.081Z"
+  "capturedAt": "2026-06-24T12:18:36.034Z"
 }

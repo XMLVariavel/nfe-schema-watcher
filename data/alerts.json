@@ -4,9 +4,17 @@
     "description": "Esquema XML NF-e/NFC-e - Pacote de Liberação nº 010c (NT 2022.002 v.1.30) (ZIP) - (Publicado em 26/03/2026)",
     "date": "26/03/2026",
     "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8chO69DQYZ8=",
-    "isNew": true
+    "isNew": false
   },
   "nts": [
+    {
+      "number": "2026.001",
+      "version": "v.1.02a",
+      "description": "Publicada em 23/06/2026",
+      "date": "23/06/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=17/3gkpGzPY=",
+      "isNew": true
+    },
     {
       "number": "2026.004",
       "version": "v.1.01",
@@ -72,14 +80,6 @@
       "isNew": false
     },
     {
-      "number": "2026.001",
-      "version": "v.1.00",
-      "description": "Publicada em 22/04/2026",
-      "date": "22/04/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=52e8psumXNc=",
-      "isNew": false
-    },
-    {
       "number": "2022.002",
       "version": "v.1.30a",
       "description": "Publicada em 26/03/2026",
@@ -89,6 +89,6 @@
     }
   ],
   "fieldCount": 484,
-  "lastUpdate": "22/06/2026, 12:23:41",
-  "generatedAt": "2026-06-22T15:23:41.397Z"
+  "lastUpdate": "24/06/2026, 09:18:36",
+  "generatedAt": "2026-06-24T12:18:36.323Z"
 }
