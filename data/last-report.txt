@@ -1,5 +1,5 @@
 === WATCHER SCHEMA NF-e ===
-Data/hora:    01/08/2026, 08:15:32
+Data/hora:    05/08/2026, 08:58:52
 Campos total: 484
 
 --- ESQUEMAS XML (XSD) ---
@@ -7,17 +7,15 @@ Campos total: 484
   https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8chO69DQYZ8=
 
 --- NOTAS TECNICAS ---
-  *** 5 NOVA(S) NT(s): ***
-  NT 2026.001 v.1.02b - 31/07/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AlgHfV6gpAU=
-  NT 2023.003 v.1.30 - 29/07/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=NjyiPKZOBFU=
-  NT 2014.001 v.1.40 - 15/07/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=JtWH/2b4Vk0=
-  NT 2014.002 v.1.40 - 03/07/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=uWO2d/gTuWg=
-  NT 2026.001 v.1.02 - 09/06/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=/DaakiRMGrw=
+  *** 4 NOVA(S) NT(s): ***
+  NT 2014.001 v.1.41 - 04/08/2026
+  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=9hgG  cH8gA=
+  NT 2026.007 v.1.00 - 04/08/2026
+  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=jVEAeMhv83w=
+  NT 2026.002 v.1.10 - 04/08/2026
+  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=3K1wvjKu/gs=
+  NT 2025.002 v.1.51 - 04/08/2026
+  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AKD/muSmiIY=
 
 Esquemas XML: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=BMPFMBoln3w=
 Notas Tecnicas: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=
