@@ -4,9 +4,25 @@
     "description": "Schemas XML NF-e/NFC-e - Pacote de Liberação 010e_v.1.02 (ZIP) - NT 2025.002 v.1.40 , NT 2026.002 v.1.0 e NT 2026.003 v.1.0 - (Publicado em 10/07/2026)",
     "date": "10/07/2026",
     "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=akib2DRpJN4=",
-    "isNew": true
+    "isNew": false
   },
   "nts": [
+    {
+      "number": "2026.002",
+      "version": "v.1.10a",
+      "description": "Publicada em 25/08/2026",
+      "date": "25/08/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8zOzIahvn8I=",
+      "isNew": true
+    },
+    {
+      "number": "2026.006",
+      "version": "v.1.00",
+      "description": "Publicada em 25/08/2026",
+      "date": "25/08/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=k7zG06n5M6I=",
+      "isNew": true
+    },
     {
       "number": "2014.001",
       "version": "v.1.41",
@@ -21,14 +37,6 @@
       "description": "Publicada em 04/08/2026",
       "date": "04/08/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=jVEAeMhv83w=",
-      "isNew": false
-    },
-    {
-      "number": "2026.002",
-      "version": "v.1.10",
-      "description": "Publicada em 04/08/2026",
-      "date": "04/08/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=3K1wvjKu/gs=",
       "isNew": false
     },
     {
@@ -78,17 +86,9 @@
       "date": "25/05/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2YdaBTIql k=",
       "isNew": false
-    },
-    {
-      "number": "2024.003",
-      "version": "v.1.10",
-      "description": "Publicada em 11/05/2026",
-      "date": "11/05/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=iamjHzm 4/I=",
-      "isNew": false
     }
   ],
   "fieldCount": 484,
-  "lastUpdate": "21/08/2026, 07:28:59",
-  "generatedAt": "2026-08-21T10:28:59.332Z"
+  "lastUpdate": "26/08/2026, 07:33:50",
+  "generatedAt": "2026-08-26T10:33:50.388Z"
 }
