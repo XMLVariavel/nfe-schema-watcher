@@ -1,10 +1,10 @@
 {
   "latestSchema": {
-    "version": "2025.002",
-    "description": "Schemas XML NF-e/NFC-e - Pacote de Liberação 010e_v.1.02 (ZIP) - NT 2025.002 v.1.40 , NT 2026.002 v.1.0 e NT 2026.003 v.1.0 - (Publicado em 10/07/2026)",
+    "version": "",
+    "description": "Schemas XML NF-e/NFC-e - Pacote de Liberação 010d_v.1.03(ZIP) CNPJ Alfanumérico- NT 2026.004.v.1.01- (Publicado em 10/07/2026)",
     "date": "10/07/2026",
-    "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=akib2DRpJN4=",
-    "isNew": false
+    "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo= pBOYTXBtbk=",
+    "isNew": true
   },
   "nts": [
     {
@@ -13,7 +13,7 @@
       "description": "Publicada em 25/08/2026",
       "date": "25/08/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8zOzIahvn8I=",
-      "isNew": true
+      "isNew": false
     },
     {
       "number": "2026.006",
@@ -21,7 +21,7 @@
       "description": "Publicada em 25/08/2026",
       "date": "25/08/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=k7zG06n5M6I=",
-      "isNew": true
+      "isNew": false
     },
     {
       "number": "2014.001",
@@ -89,6 +89,6 @@
     }
   ],
   "fieldCount": 484,
-  "lastUpdate": "26/08/2026, 07:33:50",
-  "generatedAt": "2026-08-26T10:33:50.388Z"
+  "lastUpdate": "31/08/2026, 14:23:54",
+  "generatedAt": "2026-08-31T17:23:54.843Z"
 }

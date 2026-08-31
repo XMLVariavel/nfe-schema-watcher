@@ -1,17 +1,14 @@
 === WATCHER SCHEMA NF-e ===
-Data/hora:    26/08/2026, 07:33:50
+Data/hora:    31/08/2026, 14:23:54
 Campos total: 484
 
 --- ESQUEMAS XML (XSD) ---
-  Schemas XML NF-e/NFC-e - Pacote de Liberação 010e_v.1.02 (ZIP) - NT 2025.002 v.1.40 , NT 2026.002 v.1.0 e NT 2026.003 v.1.0 - (Publicado em 10/07/2026)
-  https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=akib2DRpJN4=
+  Schemas XML NF-e/NFC-e - Pacote de Liberação 010d_v.1.03(ZIP) CNPJ Alfanumérico- NT 2026.004.v.1.01- (Publicado em 10/07/2026)
+  https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo= pBOYTXBtbk=
+  *** NOVO PACOTE DETECTADO ***
 
 --- NOTAS TECNICAS ---
-  *** 2 NOVA(S) NT(s): ***
-  NT 2026.002 v.1.10a - 25/08/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8zOzIahvn8I=
-  NT 2026.006 v.1.00 - 25/08/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=k7zG06n5M6I=
+  Ultima: Nota Técnica 2026.002 v.1.10a - Publicada em 25/08/2026
 
 Esquemas XML: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=BMPFMBoln3w=
 Notas Tecnicas: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=
