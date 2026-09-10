@@ -4,9 +4,17 @@
     "description": "Schemas XML NF-e/NFC-e - Pacote de Liberação 010d_v.1.03(ZIP) CNPJ Alfanumérico- NT 2026.004.v.1.01- (Publicado em 10/07/2026)",
     "date": "10/07/2026",
     "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo= pBOYTXBtbk=",
-    "isNew": true
+    "isNew": false
   },
   "nts": [
+    {
+      "number": "2026.009",
+      "version": "v.1.00",
+      "description": "Publicada em 09/09/2026",
+      "date": "09/09/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ADlgg2xjMZI=",
+      "isNew": true
+    },
     {
       "number": "2026.002",
       "version": "v.1.10a",
@@ -78,17 +86,9 @@
       "date": "08/06/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=BTZQzgsO9Ws=",
       "isNew": false
-    },
-    {
-      "number": "2026.003",
-      "version": "v.1.00",
-      "description": "Publicada em 25/05/2026",
-      "date": "25/05/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2YdaBTIql k=",
-      "isNew": false
     }
   ],
   "fieldCount": 484,
-  "lastUpdate": "31/08/2026, 14:23:54",
-  "generatedAt": "2026-08-31T17:23:54.843Z"
+  "lastUpdate": "10/09/2026, 11:04:37",
+  "generatedAt": "2026-09-10T14:04:37.590Z"
 }
