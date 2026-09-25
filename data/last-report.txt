@@ -1,5 +1,5 @@
 === WATCHER SCHEMA NF-e ===
-Data/hora:    10/09/2026, 11:04:37
+Data/hora:    25/09/2026, 12:00:22
 Campos total: 484
 
 --- ESQUEMAS XML (XSD) ---
@@ -7,9 +7,11 @@ Campos total: 484
   https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo= pBOYTXBtbk=
 
 --- NOTAS TECNICAS ---
-  *** 1 NOVA(S) NT(s): ***
-  NT 2026.009 v.1.00 - 09/09/2026
-  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ADlgg2xjMZI=
+  *** 2 NOVA(S) NT(s): ***
+  NT 2021.003 v.1.50 - 25/09/2026
+  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AMQDYLGE6Is=
+  NT 2023.003 v.1.40 - 25/09/2026
+  PDF: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=JSxhEY85vRU=
 
 Esquemas XML: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=BMPFMBoln3w=
 Notas Tecnicas: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=
