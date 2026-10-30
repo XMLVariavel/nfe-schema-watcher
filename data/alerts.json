@@ -4,23 +4,55 @@
     "description": "Schemas XML NF-e/NFC-e - Pacote de Liberação 010e_v.1.02 (ZIP) - NT 2025.002 v.1.40 , NT 2026.002 v.1.0 e NT 2026.003 v.1.0 - (Publicado em 10/07/2026)",
     "date": "10/07/2026",
     "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=c14derMqb2Y=",
-    "isNew": true
+    "isNew": false
   },
   "nts": [
     {
-      "number": "2026.007",
-      "version": "v.1.10",
-      "description": "Publicada em 01/10/2026",
-      "date": "01/10/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=fpJlwzhffcQ=",
-      "isNew": false
+      "number": "2026.008",
+      "version": "v.1.01",
+      "description": "Publicada em 30/10/2026",
+      "date": "30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=PVjdIcA/H2s=",
+      "isNew": true
     },
     {
-      "number": "2026.008",
+      "number": "2026.007",
+      "version": "v.1.11",
+      "description": "Publicada em 30/10/2026",
+      "date": "30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HXzgTeht 5Q=",
+      "isNew": true
+    },
+    {
+      "number": "2026.006",
+      "version": "v.1.01",
+      "description": "Publicada em 30/10/2026",
+      "date": "30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=7xf05PpO4Z0=",
+      "isNew": true
+    },
+    {
+      "number": "2026.005",
       "version": "v.1.00",
-      "description": "Publicada em 01/10/2026",
-      "date": "01/10/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=qAoMot6VyiY=",
+      "description": "Publicada em 30/10/2026",
+      "date": "30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HInG7WD5Sj8=",
+      "isNew": true
+    },
+    {
+      "number": "2025.002",
+      "version": "v.1.53",
+      "description": "Publicada em 30/10/2026",
+      "date": "30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=BMcHSMEoepU=",
+      "isNew": true
+    },
+    {
+      "number": "conjunta",
+      "version": "v.1.00",
+      "description": "Publicada em 27/10/2026",
+      "date": "27/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=DCFRgnlk4g8=",
       "isNew": false
     },
     {
@@ -29,14 +61,6 @@
       "description": "Publicada em 01/10/2026",
       "date": "01/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=m8aACnFLK/Y=",
-      "isNew": false
-    },
-    {
-      "number": "2025.002",
-      "version": "v.1.52",
-      "description": "Publicada em 01/10/2026",
-      "date": "01/10/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HXPO8VLbh4o=",
       "isNew": false
     },
     {
@@ -62,33 +86,9 @@
       "date": "25/09/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=JSxhEY85vRU=",
       "isNew": false
-    },
-    {
-      "number": "2026.009",
-      "version": "v.1.00",
-      "description": "Publicada em 09/09/2026",
-      "date": "09/09/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ADlgg2xjMZI=",
-      "isNew": false
-    },
-    {
-      "number": "2026.006",
-      "version": "v.1.00",
-      "description": "Publicada em 25/08/2026",
-      "date": "25/08/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=k7zG06n5M6I=",
-      "isNew": false
-    },
-    {
-      "number": "2014.001",
-      "version": "v.1.41",
-      "description": "Publicada em 04/08/2026",
-      "date": "04/08/2026",
-      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=9hgG  cH8gA=",
-      "isNew": false
     }
   ],
   "fieldCount": 484,
-  "lastUpdate": "08/10/2026, 14:12:38",
-  "generatedAt": "2026-10-08T17:12:38.187Z"
+  "lastUpdate": "30/10/2026, 13:32:31",
+  "generatedAt": "2026-10-30T16:32:31.951Z"
 }
